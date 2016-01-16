@@ -2,9 +2,7 @@
 
 Use this strategy for projects where features get deployed as soon as they're ready.
 
-We follow the **GitHub flow** workflow as closely as possible. This page showcases common development scenarios and how to deal with them from a branching point of view.
-
-<!-- TOC depthFrom:2 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+We follow the [**GitHub flow**](https://guides.github.com/introduction/flow/) workflow as closely as possible. This page showcases common development scenarios and how to deal with them from a branching point of view.
 
 - [Branches Overview](#branches-overview)
 - [Develop a new feature](#develop-a-new-feature)
@@ -13,8 +11,6 @@ We follow the **GitHub flow** workflow as closely as possible. This page showcas
 - [Change in plan, pull a feature from a release](#change-in-plan-pull-a-feature-from-a-release)
 - [Change request](#change-request)
 - [Production hot fix](#production-hot-fix)
-
-<!-- /TOC -->
 
 ## Branches Overview
 
@@ -30,38 +26,47 @@ We follow the **GitHub flow** workflow as closely as possible. This page showcas
 
 **TBD: Insert diagram**
 
-1. Make sure your `master` branch is up-to-date
+1. Make sure your `master` branch is up-to-date.
    ```
    $ git checkout master
    $ git pull
    ```
-1. Create a feature branch based off of `master`
+1. Create a feature branch based off of `master`.
    ```
    $ git checkout -b feature-new-documentation
    ```
-1. Develop the code for the new feature and commit
+1. Develop the code for the new feature and commit as you go.
    ```
+   $ ... make changes
    $ git add -A .
    $ git commit -m "Add new documentation files"
+   $ ... make more changes
+   $ git add -A .
+   $ git commit -m "Fix some spelling errors"
    ```
-1. When the feature is complete and tested locally, push the feature branch
+1. As a final step before creating a pull request, be sure to update your branch from the `Base` branch. This makes sure the code you are merging into `Base` is exactly the same as what you're testing.
+   ```
+   $ git checkout master
+   $ git pull
+   $ git checkout feature-new-documentation
+   $ git merge master
+   ```
+1. When the feature is complete and tested locally, push the feature branch.
    ```
    $ git push --set-upstream feature-new-documentation
    ```
 1. Navigate to the project on [Github](www.github.com) and open a pull request with the following branch settings:
    * Base: `master`
    * Compare: `feature-new-documentation`
-1. When the pull request was reviewed, merge and close it and delete the `feature-new-documentation` branch.
-1. Tag `master`
-   ```
-   $ git checkout master
-   $ git tag -a vX.Y.Z -m "hotfix-vZ.Y.Z"
-   $ git push --tags
-   ```
+1. When the pull request has been reviewed, merge and close it and then delete the `feature-new-documentation` branch.
+1. Deploy `master` to a staging environment to verify (_some teams have this automated, some prefer a manual deploy through convention, either is fine_).
+1. If everything is good, promote staging to production and you're done. If not, roll back production to the previous release and return to Step 1.
 
 ## Develop multiple features in parallel
 
 There's nothing special about that. Each developer follows the above [Develop a new feature](#develop-a-new-feature) process.
+
+One caveat is to make sure that before you merge to `master` you update your branch from `master`. This ensures that you have all changes that have been merged into `master` since you created your branch.
 
 ## Create and deploy a release
 

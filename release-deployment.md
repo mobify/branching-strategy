@@ -3,9 +3,7 @@
 Use this strategy for projects where features get bundled into a release and then
 deployed all at once.
 
-We follow the **Gitflow** workflow as closely as possible. This page showcases common development scenarios and how to deal with them from a branching point of view.
-
-<!-- TOC depthFrom:2 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+We follow the [**Gitflow**](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) workflow as closely as possible. This page showcases common development scenarios and how to deal with them from a branching point of view.
 
 - [Branches Overview](#branches-overview)
 - [Develop a new feature](#develop-a-new-feature)
