@@ -68,15 +68,18 @@ is exactly the same as what you're testing.
    ```
    $ git push --set-upstream feature-new-documentation
    ```
-   
+
 1. Navigate to the project on [Github](www.github.com) and open a pull request
 with the following branch settings:
    * Base: `master`
    * Compare: `feature-new-documentation`
+
 1. When the pull request has been reviewed and ![+1'd](images/plus1.png)
 , merge and close it and then delete the `feature-new-documentation` branch.
+
 1. Deploy `master` to a staging environment to verify (_some teams have this
     automated, some prefer a manual deploy through convention, either is fine_).
+
 1. If everything is good in staging, promote it to production and you're done.
 If not, roll back production to the previous release and return to Step 1.
 

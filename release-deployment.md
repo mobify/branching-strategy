@@ -33,26 +33,35 @@ We follow the [**Gitflow**](https://www.atlassian.com/git/tutorials/comparing-wo
 **TBD: Insert diagram**
 
 1. Make sure your `develop` branch is up-to-date
+
    ```
    $ git checkout develop
    $ git pull
    ```
+
 1. Create a feature branch based off of `develop`
+
    ```
    $ git checkout -b feature-new-documentation
    ```
+
 1. Develop the code for the new feature and commit
+
    ```
    $ git add -A .
    $ git commit -m "Add new documentation files"
    ```
+
 1. When the feature is complete and tested locally, push the feature branch
+
    ```
    $ git push --set-upstream feature-new-documentation
    ```
+
 1. Navigate to the project on [Github](www.github.com) and open a pull request with the following branch settings:
    * Base: `develop`
    * Compare: `feature-new-documentation`
+
 1. When the pull request was reviewed, merge and close it and delete the `feature-new-documentation` branch.
 
 ## Develop multiple features in parallel
@@ -64,16 +73,21 @@ There's nothing special about that. Each developer follows the above [Develop a 
 **TBD: Insert diagram**
 
 1. Make sure your `master` and `develop` branches are up-to-date
+
    ```
    $ git checkout master; git pull
    $ git checkout develop; git pull
    ```
+
 1. Merge `master` into `develop` to ensure the new release will contain the latest production code
+
    ```
    $ git checkout develop
    $ git merge master
    ```
+
 1. Create a new `release-vX.Y.Z` release branch off of `develop`
+
    ```
    $ git checkout -b release-vX.Y.Z
    ```
@@ -82,6 +96,7 @@ There's nothing special about that. Each developer follows the above [Develop a 
 Mike N: Long-lived release branches, yes/no?
 
 1. Tag `master`
+
    ```
    $ git checkout master
    $ git tag -a vX.Y.Z -m "hotfix-vZ.Y.Z"
@@ -103,34 +118,47 @@ Mike N: That probably means recreating the release branch, unless we have short-
 **TBD: Insert diagram**
 
 1. Make sure your `master` branch is up-to-date
+
    ```
    $ git checkout master
    $ git pull
    ```
+
 1. Create a hot fix branch based off of `master`
+
    ```
    $ git checkout -b hotfix-documentation-broken-links
    ```
+
 1. Add a test case to validate the bug, fix the bug and commit
+
    ```
    $ git add -A .
    $ git commit -m "Fix broken links"
    ```
+
 1. When the fix is complete and tested locally, push the hot fix branch
+
    ```
    $ git push --set-upstream hotfix-documentation-broken-links
    ```
+
 1. Navigate to the project on [Github](www.github.com) and open a pull request with the following branch settings:
    * Base: `master`
    * Compare: `hotfix-documentation-broken-links`
+
 1. When the pull request was reviewed, merge and close it and delete the `hotfix-documentation-broken-links` branch.
+
 1. Tag `master`
+
    ```
    $ git checkout master
    $ git tag -a vX.Y.Z -m "hotfix-vZ.Y.Z"
    $ git push --tags
    ```
+
 1. Merge `master` into `develop`. This ensures future releases will contain the hot fix.
+
    ```
    $ git checkout develop
    $ git merge master
