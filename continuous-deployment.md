@@ -2,7 +2,9 @@
 
 Use this strategy for projects where features get deployed as soon as they're ready.
 
-We follow the [**GitHub flow**](https://guides.github.com/introduction/flow/) workflow as closely as possible. This page showcases common development scenarios and how to deal with them from a branching point of view.
+We follow the [**GitHub flow**](https://guides.github.com/introduction/flow/)
+workflow as closely as possible. This page showcases common development scenarios
+and how to deal with them from a branching point of view.
 
 - [Branches Overview](#branches-overview)
 - [Develop a new feature](#develop-a-new-feature)
@@ -44,7 +46,9 @@ We follow the [**GitHub flow**](https://guides.github.com/introduction/flow/) wo
    $ git add -A .
    $ git commit -m "Fix some spelling errors"
    ```
-1. As a final step before creating a pull request, be sure to update your branch from the `Base` branch. This makes sure the code you are merging into `Base` is exactly the same as what you're testing.
+1. As a final step before creating a pull request, be sure to update your branch
+from the `master` branch. This makes sure the code you are merging into `master`
+is exactly the same as what you're testing.
    ```
    $ git checkout master
    $ git pull
@@ -55,35 +59,35 @@ We follow the [**GitHub flow**](https://guides.github.com/introduction/flow/) wo
    ```
    $ git push --set-upstream feature-new-documentation
    ```
-1. Navigate to the project on [Github](www.github.com) and open a pull request with the following branch settings:
+1. Navigate to the project on [Github](www.github.com) and open a pull request
+with the following branch settings:
    * Base: `master`
    * Compare: `feature-new-documentation`
-1. When the pull request has been reviewed, merge and close it and then delete the `feature-new-documentation` branch.
-1. Deploy `master` to a staging environment to verify (_some teams have this automated, some prefer a manual deploy through convention, either is fine_).
-1. If everything is good, promote staging to production and you're done. If not, roll back production to the previous release and return to Step 1.
+1. When the pull request has been reviewed and ![+1'd](images/plus1.png)
+, merge and close it and then delete the `feature-new-documentation` branch.
+1. Deploy `master` to a staging environment to verify (_some teams have this
+    automated, some prefer a manual deploy through convention, either is fine_).
+1. If everything is good in staging, promote it to production and you're done.
+If not, roll back production to the previous release and return to Step 1.
 
 ## Develop multiple features in parallel
 
-There's nothing special about that. Each developer follows the above [Develop a new feature](#develop-a-new-feature) process.
+There's nothing special about that. Each developer follows the above
+[Develop a new feature](#develop-a-new-feature) process.
 
-One caveat is to make sure that before you merge to `master` you update your branch from `master`. This ensures that you have all changes that have been merged into `master` since you created your branch.
-
-## Create and deploy a release
-
-**TBD: Discuss**
-Mike N: I can see two scenarios, with or without continuous deployment set up
-
-## Change in plan, pull a feature from a release
-
-**TBD: Discuss**
-Mike N: Is that as simple as reverting the PR merge when the feature was added? Should each PR just be 1 commit (using rebase)?
-
-## Change request
-
-**TBD: Discuss**
-Mike N: Same as [Develop a new feature](#develop-a-new-feature)
+*One caveat is to make sure that before you merge to `master` you update your
+branch from `master`. This ensures that you have all changes that have been merged
+into `master` since you created your branch. If you don't do this, git may still
+be able to automatically merge your code, but there is no guarantee that the
+code you tested in your branch is exactly what you deploy from production. As a
+result, your final step before you merge to `master` should always
+include merging from `master` doing a final test and then merging.*
 
 ## Production hot fix
+
+*In rare situations you may need to get a fix into production fast! Use this
+workflow to push a hotfix to production when you can't spare the time to
+follow the standard 'Develop a feature' workflow.*
 
 **TBD: Insert diagram**
 
