@@ -92,6 +92,7 @@ follow the standard 'Develop a feature' workflow.*
 **TBD: Insert diagram**
 
 1. Make sure your `master` branch is up-to-date
+
    ```
    $ git checkout master
    $ git pull
