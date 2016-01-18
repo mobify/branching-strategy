@@ -3,7 +3,9 @@
 Use this strategy for projects where features get bundled into a release and then
 deployed all at once.
 
-We follow the [**Gitflow**](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) workflow as closely as possible. This page showcases common development scenarios and how to deal with them from a branching point of view.
+We follow the [**Gitflow**](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
+workflow as closely as possible. This page showcases common development scenarios
+and how to deal with them from a branching point of view.
 
 - [Branches Overview](#branches-overview)
 - [Develop a new feature](#develop-a-new-feature)
@@ -22,7 +24,7 @@ We follow the [**Gitflow**](https://www.atlassian.com/git/tutorials/comparing-wo
 | Branch           | Commits Allowed? | Base Branch      | Description    |
 | :----------------|:-----------------|:-----------------|:---------------|
 | `master`         | NO               | N/A              | What is live in production (**stable**).<br/>A pull request is required to merge code into `master`. |
-| `develop`        | YES              | `master`         | The latest state of development (**unstable**). |
+| `develop`        | NO               | `master`         | The latest state of development (**unstable**). |
 | `feature-*`      | YES              | `develop`        | Cutting-edge features (**unstable**). These branches are used for any maintenance features / active development. |
 | `release-vX.Y.Z` | NO               | `master`         | A temporary release branch that follows the [semver](http://semver.org/) versioning. This is what is sent to UAT.<br/>A pull request is required to merge code into any `release-vX.Y.Z` branch. |
 | `bugfix-*`       | YES              | `release-vX.Y.Z` | Any fixes against a release branch should be made in a bug-fix branch. The bug-fix branch should be merged into the release branch and also into develop. This is one area where we’re deviating from GitFlow. |
