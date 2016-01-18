@@ -78,7 +78,7 @@ with the following branch settings:
 , merge and close it and then delete the `feature-new-documentation` branch.
 
 1. Deploy `master` to a staging environment to verify (_some teams have this
-    automated, some prefer a manual deploy through convention, either is fine_).
+    automated, some prefer a manual deploy with some conventions, either is fine_).
 
 1. If everything is good in staging, promote it to production and you're done.
 If not, roll back production to the previous release and return to Step 1.
@@ -88,13 +88,9 @@ If not, roll back production to the previous release and return to Step 1.
 There's nothing special about that. Each developer follows the above
 [Develop a new feature](#develop-a-new-feature) process.
 
-*One caveat is to make sure that before you merge to `master` you update your
-branch from `master`. This ensures that you have all changes that have been merged
-into `master` since you created your branch. If you don't do this, git may still
-be able to automatically merge your code, but there is no guarantee that the
-code you tested in your branch is exactly what you deploy from production. As a
-result, your final step before you merge to `master` should always
-include merging from `master` doing a final test and then merging.*
+During development, make sure to update from `master` often so that when you
+get ready to complete your feature you don't have to deal with large code
+conflicts.
 
 ## Production hot fix
 
@@ -104,49 +100,34 @@ follow the standard 'Develop a feature' workflow.*
 
 **TBD: Insert diagram**
 
-1. Make sure your `master` branch is up-to-date
+1. Make sure your `master` branch is up-to-date.
 
    ```
    $ git checkout master
    $ git pull
    ```
 
-1. Create a hot fix branch based off of `master`
+1. Make the changes directly on `master` and commit.
 
    ```
-   $ git checkout -b hotfix-documentation-broken-links
-   ```
-
-1. Add a test case to validate the bug, fix the bug and commit
-
-   ```
+   ... code code code
    $ git add -A .
    $ git commit -m "Fix broken links"
    ```
 
-1. When the fix is complete and tested locally, push the hot fix branch
+1. When the fix is complete and tested locally, verify it with at least one other,
+engineer. Push the commit to Github.
+   *When doing a hotfix you should at _least_ pair on the fix with somebody or
+   review it in person with one other engineer before releasing it. We're
+   running without training wheel's here and want to do our best not to have to
+   do a stream of hotfixes in production.*
 
    ```
-   $ git push --set-upstream hotfix-documentation-broken-links
+   $ git push origin master
    ```
 
-1. Navigate to the project on [Github](www.github.com) and open a pull request with the following branch settings:
-   * Base: `master`
-   * Compare: `hotfix-documentation-broken-links`
+1. Deploy `master` to a staging environment to verify (_some teams have this
+automated, some prefer a manual deploy with some conventions, either is fine_).
 
-1. When the pull request was reviewed, merge and close it and delete the `hotfix-documentation-broken-links` branch.
-
-1. Tag `master`
-
-   ```
-   $ git checkout master
-   $ git tag -a vX.Y.Z -m "hotfix-vZ.Y.Z"
-   $ git push --tags
-   ```
-
-1. Merge `master` into `develop`. This ensures future releases will contain the hot fix.
-
-   ```
-   $ git checkout develop
-   $ git merge master
-   ```
+1. If everything is good in staging, promote it to production and you're done.
+If not, roll back production to the previous release and return to Step 1.
