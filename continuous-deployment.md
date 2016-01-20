@@ -2,9 +2,9 @@
 
 Use this strategy for projects where features get deployed as soon as they're ready.
 
-We follow the **GitHub flow** workflow as closely as possible. This page showcases common development scenarios and how to deal with them from a branching point of view.
-
-<!-- TOC depthFrom:2 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+We follow the [**GitHub flow**](https://guides.github.com/introduction/flow/)
+workflow as closely as possible. This page showcases common development scenarios
+and how to deal with them from a branching point of view.
 
 - [Branches Overview](#branches-overview)
 - [Develop a new feature](#develop-a-new-feature)
@@ -13,8 +13,6 @@ We follow the **GitHub flow** workflow as closely as possible. This page showcas
 - [Change in plan, pull a feature from a release](#change-in-plan-pull-a-feature-from-a-release)
 - [Change request](#change-request)
 - [Production hot fix](#production-hot-fix)
-
-<!-- /TOC -->
 
 ## Branches Overview
 
@@ -30,88 +28,106 @@ We follow the **GitHub flow** workflow as closely as possible. This page showcas
 
 **TBD: Insert diagram**
 
-1. Make sure your `master` branch is up-to-date
+1. Make sure your `master` branch is up-to-date.
+
    ```
    $ git checkout master
    $ git pull
    ```
-1. Create a feature branch based off of `master`
+
+1. Create a feature branch based off of `master`.
+
    ```
    $ git checkout -b feature-new-documentation
    ```
-1. Develop the code for the new feature and commit
+
+1. Develop the code for the new feature and commit as you go.
+
    ```
+   $ ... make changes
    $ git add -A .
    $ git commit -m "Add new documentation files"
+   $ ... make more changes
+   $ git add -A .
+   $ git commit -m "Fix some spelling errors"
    ```
-1. When the feature is complete and tested locally, push the feature branch
+
+1. As a final step before creating a pull request, be sure to update your branch
+from the `master` branch. This makes sure the code you are merging into `master`
+is exactly the same as what you're testing.
+
+   ```
+   $ git checkout master
+   $ git pull
+   $ git checkout feature-new-documentation
+   $ git merge master
+   ```
+
+1. When the feature is complete and tested locally, push the feature branch.
+
    ```
    $ git push --set-upstream feature-new-documentation
    ```
-1. Navigate to the project on [Github](www.github.com) and open a pull request with the following branch settings:
+
+1. Navigate to the project on [Github](www.github.com) and open a pull request
+with the following branch settings:
    * Base: `master`
    * Compare: `feature-new-documentation`
-1. When the pull request was reviewed, merge and close it and delete the `feature-new-documentation` branch.
-1. Tag `master`
-   ```
-   $ git checkout master
-   $ git tag -a vX.Y.Z -m "hotfix-vZ.Y.Z"
-   $ git push --tags
-   ```
+
+1. When the pull request has been reviewed and ![+1'd](images/plus1.png)
+, merge and close it and then delete the `feature-new-documentation` branch.
+
+1. Deploy `master` to a staging environment to verify (_some teams have this
+    automated, some prefer a manual deploy with some conventions, either is fine_).
+
+1. If everything is good in staging, promote it to production and you're done.
+If not, roll back production to the previous release and return to Step 1.
 
 ## Develop multiple features in parallel
 
-There's nothing special about that. Each developer follows the above [Develop a new feature](#develop-a-new-feature) process.
+There's nothing special about that. Each developer follows the above
+[Develop a new feature](#develop-a-new-feature) process.
 
-## Create and deploy a release
-
-**TBD: Discuss**
-Mike N: I can see two scenarios, with or without continuous deployment set up
-
-## Change in plan, pull a feature from a release
-
-**TBD: Discuss**
-Mike N: Is that as simple as reverting the PR merge when the feature was added? Should each PR just be 1 commit (using rebase)?
-
-## Change request
-
-**TBD: Discuss**
-Mike N: Same as [Develop a new feature](#develop-a-new-feature)
+During development, make sure to update from `master` often so that when you
+get ready to complete your feature you don't have to deal with large code
+conflicts.
 
 ## Production hot fix
 
+*In rare situations you may need to get a fix into production fast! Use this
+workflow to push a hotfix to production when you can't spare the time to
+follow the standard 'Develop a feature' workflow.*
+
 **TBD: Insert diagram**
 
-1. Make sure your `master` branch is up-to-date
+1. Make sure your `master` branch is up-to-date.
+
    ```
    $ git checkout master
    $ git pull
    ```
-1. Create a hot fix branch based off of `master`
+
+1. Make the changes directly on `master` and commit.
+
    ```
-   $ git checkout -b hotfix-documentation-broken-links
-   ```
-1. Add a test case to validate the bug, fix the bug and commit
-   ```
+   ... code code code
    $ git add -A .
    $ git commit -m "Fix broken links"
    ```
-1. When the fix is complete and tested locally, push the hot fix branch
+
+1. When the fix is complete and tested locally, verify it with at least one other,
+engineer. Push the commit to Github.
+   *When doing a hotfix you should at _least_ pair on the fix with somebody or
+   review it in person with one other engineer before releasing it. We're
+   running without training wheel's here and want to do our best not to have to
+   do a stream of hotfixes in production.*
+
    ```
-   $ git push --set-upstream hotfix-documentation-broken-links
+   $ git push origin master
    ```
-1. Navigate to the project on [Github](www.github.com) and open a pull request with the following branch settings:
-   * Base: `master`
-   * Compare: `hotfix-documentation-broken-links`
-1. When the pull request was reviewed, merge and close it and delete the `hotfix-documentation-broken-links` branch.
-1. Tag `master`
-   ```
-   $ git checkout master
-   $ git tag -a vX.Y.Z -m "hotfix-vZ.Y.Z"
-   $ git push --tags
-   ```
-1. Merge `master` into `develop`. This ensures future releases will contain the hot fix.
-   ```
-   $ git checkout develop
-   $ git merge master
-   ```
+
+1. Deploy `master` to a staging environment to verify (_some teams have this
+automated, some prefer a manual deploy with some conventions, either is fine_).
+
+1. If everything is good in staging, promote it to production and you're done.
+If not, roll back production to the previous release and return to Step 1.

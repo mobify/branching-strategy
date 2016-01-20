@@ -1,5 +1,11 @@
 # Mobify Branching Strategy
 
+This document represents Mobify's current branching and release strategy. It provides a brief overview of the two release models that we use: [release-based](release-deployment.md) and [continuous delivery](continuous-deployment.md).
+
+Each workflow tries to make things as simple as possible while still being flexible enough to work for all teams at Mobify.
+
+At the end of each document is a list of common scenarios you will encounter and how Mobify's branching strategies apply.
+
 ## What is the purpose of this repository?
 
 As Mobify continues to grow and expand its operations globally, consistency across all teams and partners is a key
@@ -11,18 +17,10 @@ This repository and its documentation outline:
 * What to do when a hot fix is required
 * Anything else related to our branching strategy
 
-### This repository will be helpful for:
-
-* Any new Mobify employees who will be involved in both internal and client-facing projects
-* Partners, contractors, etc who modify project code
-* Onboarding
-
 ### What the repository is not:
 
-* Written in stone. Pull requests are welcome and we will update this document with lessons learned
-and improvements as we go
-* The one and only way to work on projects. There are always certain edge cases where things
-have to be tweaked, but don't let tweaking become the norm
+* Written in stone. Pull requests are welcome and we will update this document with lessons learned and improvements as we go
+* The one and only way to work on projects. There are always certain edge cases where things have to be tweaked, but don't let tweaking become the norm
 
 ## Project Types
 
