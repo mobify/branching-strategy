@@ -38,3 +38,8 @@ Use this strategy for projects where features get bundled into a release and the
 deployed together.
 
 [Learn more](./release-deployment.md)
+
+## Anti-Patterns
+
+After reading all of the above, none of the [Anti-Patterns](antipatterns.md) should
+come as a surprise.
