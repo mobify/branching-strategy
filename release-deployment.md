@@ -8,14 +8,15 @@ workflow as closely as possible. This page showcases common development scenario
 and how to deal with them from a branching point of view.
 
 - [Branches Overview](#branches-overview)
-- [Develop a new feature](#develop-a-new-feature)
-- [Develop multiple features in parallel](#develop-multiple-features-in-parallel)
-- [Create and deploy a release](#create-and-deploy-a-release)
-- [Change in plan, pull a feature from a release](#change-in-plan-pull-a-feature-from-a-release)
-- [Change request](#change-request)
-- [Production hot fix](#production-hot-fix)
-
-<!-- /TOC -->
+- [Use Cases](#use-cases)
+  - [Develop a new feature](#develop-a-new-feature)
+  - [Develop multiple features in parallel](#develop-multiple-features-in-parallel)
+  - [Create and deploy a release](#create-and-deploy-a-release)
+  - [Change in plan, pull a feature from a release](#change-in-plan-pull-a-feature-from-a-release)
+  - [Change request](#change-request)
+  - [Production hot fix](#production-hot-fix)
+  - [Production hot fix](#production-hot-fix)
+- [Migrate a legacy project](#migrate-a-legacy-project)
 
 ## Branches Overview
 
@@ -30,7 +31,9 @@ and how to deal with them from a branching point of view.
 | `bugfix-*`       | YES              | `release-vX.Y.Z` | Any fixes against a release branch should be made in a bug-fix branch. The bug-fix branch should be merged into the release branch and also into develop. This is one area where we’re deviating from GitFlow. |
 | `hotfix-*`       | YES              | `master`         | These are bug fixes against production.<br/>This is used because develop might have moved on from the last published state.<br/>Remember to merge this back into develop and any release branches. |
 
-## Develop a new feature
+## Use Cases
+
+### Develop a new feature
 
 **TBD: Insert diagram**
 
@@ -66,11 +69,11 @@ and how to deal with them from a branching point of view.
 
 1. When the pull request was reviewed, merge and close it and delete the `feature-new-documentation` branch.
 
-## Develop multiple features in parallel
+### Develop multiple features in parallel
 
 There's nothing special about that. Each developer follows the above [Develop a new feature](#develop-a-new-feature) process.
 
-## Create and deploy a release
+### Create and deploy a release
 
 **TBD: Insert diagram**
 
@@ -105,17 +108,17 @@ Mike N: Long-lived release branches, yes/no?
    $ git push --tags
    ```
 
-## Change in plan, pull a feature from a release
+### Change in plan, pull a feature from a release
 
 **TBD: Discuss**
 Mike N: That probably means recreating the release branch, unless we have short-lived release branches
 
-## Change request
+### Change request
 
 **TBD: Discuss**
 Mike N: That probably means recreating the release branch, unless we have short-lived release branches
 
-## Production hot fix
+### Production hot fix
 
 **TBD: Insert diagram**
 
@@ -165,3 +168,8 @@ Mike N: That probably means recreating the release branch, unless we have short-
    $ git checkout develop
    $ git merge master
    ```
+
+## Migrate a legacy project
+
+To migrate any git project to our branching strategy, please follow the instructions
+in the [Migration](migration.md) document.
