@@ -35,10 +35,14 @@ and how to deal with them from a branching point of view.
    $ git pull
    ```
 
-1. Create a feature branch based off of `master`.
+1. Create a feature branch based off of `master`. It's useful, if you work
+from tickets in JIRA, to include the ticket number in the branch name. Pushing
+it as soon as it's created allows other developers to see it, and also allows
+you to create a pull request early, for visibility and to get early feedback:
 
    ```
-   $ git checkout -b feature-new-documentation
+   $ git checkout -b feature-MYTEAM-123-new-documentation
+   $ git push --set-upstream feature-MYTEAM-123-new-documentation
    ```
 
 1. Develop the code for the new feature and commit as you go.
@@ -54,28 +58,27 @@ and how to deal with them from a branching point of view.
 
 1. As a final step before creating a pull request, be sure to update your branch
 from the `master` branch. This makes sure the code you are merging into `master`
-is exactly the same as what you're testing.
+is exactly the same as that which you're testing.
 
    ```
-   $ git checkout master
-   $ git pull
-   $ git checkout feature-new-documentation
+   $ git fetch origin master
    $ git merge master
    ```
 
 1. When the feature is complete and tested locally, push the feature branch.
 
    ```
-   $ git push --set-upstream feature-new-documentation
+   $ git push
    ```
 
 1. Navigate to the project on [Github](www.github.com) and open a pull request
 with the following branch settings:
    * Base: `master`
-   * Compare: `feature-new-documentation`
+   * Compare: `feature-MYTEAM-123-new-documentation`
 
 1. When the pull request has been reviewed and ![+1'd](images/plus1.png)
-, merge and close it and then delete the `feature-new-documentation` branch.
+, merge and close it and then delete the `feature-MYTEAM-123-new-documentation`
+branch. This can all be done from the Github pull-request page.
 
 1. Deploy `master` to a staging environment to verify (_some teams have this
     automated, some prefer a manual deploy with some conventions, either is fine_).
