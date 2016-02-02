@@ -62,7 +62,7 @@ is exactly the same as that which you're testing.
 
    ```
    $ git fetch origin master
-   $ git merge master
+   $ git merge origin/master
    ```
 
 1. When the feature is complete and tested locally, push the feature branch.
