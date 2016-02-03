@@ -155,10 +155,9 @@ Mike N: That probably means recreating the release branch, unless we have short-
 ### Production hot fix
 
 A production hotfix is very similar to a full-scale release except that you do
-your work in a branch taken directly off of `master`. A hotfix should occur very
-rarely and be used only when the fix is time-sensitive. If you aren't pressed
-for time just do a regular release. If your release process is long and painful,
-optimize that as opposed to using a hotfix.
+your work in a branch taken directly off of `master`. Hotfixes are useful in cases
+where you want to patch a bug in a released version, but `develop` has unreleased
+code in it already.
 
 **TBD: Insert diagram**
 
@@ -188,18 +187,19 @@ optimize that as opposed to using a hotfix.
 1. At some point in the checklist you will merge the hotfix branch into `master`.
   You can do this by using the "Merge pull request" button on the release PR.
 
-1. Now you are ready to create the actual release. Navigate to the project page
-  on Github and draft a new release with the following settings:
-  * Tag version: `vX.Y.Z`
-  * Target: `master`
-  * Release title: `Release vX.Y.Z (hotfix)`
-  * Description: Include a high-level list of things changed in this release.
+1. Now that the hotfix code is in `master` you are ready to create the actual
+   release. Navigate to the project page on Github and draft a new release with
+   the following settings:
+   * Tag version: `vX.Y.Z`
+   * Target: `master`
+   * Release title: `Release vX.Y.Z (hotfix)`
+   * Description: Include a high-level list of things changed in this release.
 
   Click `Publish release`.
 
-  *Note: Hotfix releases _are_ actual releases. You should bump at least the patch part
-  of the version when releasing a hotfix and so even hotfixes go through the
-  process of creating a release like this.*
+  *Note: Hotfix releases _are_ actual releases. You should bump at least the
+  patch part of the version when releasing a hotfix and so even hotfixes go
+  through the process of creating a release like this.*
 
 1. Merge the `hotfix-documentation-broken-links` into `develop`.
 
@@ -210,7 +210,7 @@ optimize that as opposed to using a hotfix.
    ```
 
 1. Finish off the tasks in the release checklist. Once everything is done, close
-  the hotfix PR.
+   the hotfix PR.
 
 ## Migrate a legacy project
 

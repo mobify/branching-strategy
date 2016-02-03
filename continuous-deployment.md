@@ -28,19 +28,10 @@ and how to deal with them from a branching point of view.
 
 **TBD: Insert diagram**
 
-1. Make sure your `master` branch is up-to-date.
+1. Create a feature branch based off of `master`.
 
    ```
    $ git checkout master
-   $ git pull
-   ```
-
-1. Create a feature branch based off of `master`. It's useful, if you work
-from tickets in JIRA, to include the ticket number in the branch name. Pushing
-it as soon as it's created allows other developers to see it, and also allows
-you to create a pull request early, for visibility and to get early feedback:
-
-   ```
    $ git checkout -b MYTEAM-123-new-documentation
    $ git push --set-upstream MYTEAM-123-new-documentation
    ```
@@ -54,20 +45,6 @@ you to create a pull request early, for visibility and to get early feedback:
    $ ... make more changes
    $ git add -A .
    $ git commit -m "Fix some spelling errors"
-   $ git push
-   ```
-
-1. As a final step before creating a pull request, be sure to update your branch
-from the `master` branch. This makes sure the code you are merging into `master`
-is exactly the same as that which you're testing.
-
-   ```
-   $ git pull
-   ```
-
-1. When the feature is complete and tested locally, push the feature branch.
-
-   ```
    $ git push
    ```
 
