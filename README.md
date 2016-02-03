@@ -56,6 +56,32 @@ Other than that, choose names that are descriptive and concise. You don't need a
 name that is a novel because most branches should be relatively short-lived (hours to
 days, not weeks).
 
+## Git @ Mobify
+
+Mobify uses git (specifically [Github](github.com)) for all source control. Git is
+a very flexible tool and we have adopted some patterns when using git specifically
+at Mobify. Think of it as the git equivalent of "Javascript - The Good Parts." :)
+
+### Updating branches
+
+Git always works on a local copy of a repository. As a result, whenever you do any
+operations that involve multiple branches (eg. merge) be sure to update both branches
+before performing the operation.
+
+### `git pull`
+
+Git provides a single command to update your local branch with changes from a remote.
+`git pull` is this command. Most of the time it does exactly what you want without
+any problems, but you should know that `git pull` is really `git fetch` followed
+by `git merge`. So when you pull from a remote, you're actually updating the remote
+tracking branch (eg. `origin/mybranch`) and then merging that into your local
+branch `mybranch`.
+
+It's good to know that this happens under the hood. Some people prefer to do the
+`git fetch` and `git merge` operations separately. Most of the time `git pull` will
+do what you want and so is an acceptable way to update your local branch with
+changes from remote.
+
 ## Anti-Patterns
 
 After reading all of the above, none of the [Anti-Patterns](antipatterns.md) should
