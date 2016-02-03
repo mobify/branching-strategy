@@ -54,6 +54,7 @@ you to create a pull request early, for visibility and to get early feedback:
    $ ... make more changes
    $ git add -A .
    $ git commit -m "Fix some spelling errors"
+   $ git push
    ```
 
 1. As a final step before creating a pull request, be sure to update your branch
@@ -107,7 +108,8 @@ follow the standard 'Develop a feature' workflow.*
 
    ```
    $ git checkout master
-   $ git pull
+   $ git fetch origin master
+   $ git merge origin/master
    ```
 
 1. Make the changes directly on `master` and commit.
