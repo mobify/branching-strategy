@@ -39,15 +39,10 @@ and how to deal with them from a branching point of view.
 
 1. Make sure your `develop` branch is up-to-date
 
-   ```
-   $ git checkout develop
-   $ git fetch
-   $ git merge origin/develop
-   ```
-
 1. Create a feature branch based off of `develop`
 
    ```
+   $ git checkout develop
    $ git checkout -b MYTEAM-123-new-documentation
    $ git push --set-upstream MYTEAM-123-new-documentation
    ```
@@ -84,19 +79,16 @@ There's nothing special about that. Each developer follows the above [Develop a 
 
 1. Make sure your `master` and `develop` branches are up-to-date
 
-   ```
-   $ git checkout master; git pull
-   $ git checkout develop; git pull
-   ```
-
-1. Merge `master` into `develop` to ensure the new release will contain the latest production code
+1. Merge `master` into `develop` to ensure the new release will contain the
+   latest production code. This reduces the chance of a merge conflict during
+   the release.
 
    ```
    $ git checkout develop
    $ git merge master
    ```
 
-1. Create a new `release-vX.Y.Z` release branch off of `develop`
+1. Create a new `release-vX.Y.Z` release branch off of `develop`.
 
    ```
    $ git checkout -b release-vX.Y.Z
@@ -128,8 +120,7 @@ There's nothing special about that. Each developer follows the above [Develop a 
 
     ```
     $ git checkout master
-    $ git fetch
-    $ git merge origin/master
+    $ git pull
     ```
 
 1. Merge the `release-vX.Y.Z` branch into `master`.
@@ -143,8 +134,7 @@ There's nothing special about that. Each developer follows the above [Develop a 
 
     ```
     $ git checkout develop
-    $ git fetch
-    $ git merge origin/develop
+    $ git pull
     ```
 
 1. Merge `master` into `develop`.
@@ -177,8 +167,7 @@ Mike N: That probably means recreating the release branch, unless we have short-
 
    ```
    $ git checkout master
-   $ git fetch
-   $ git merge origin/master
+   $ git pull
    ```
 
 1. Create a hot fix branch based off of `master`

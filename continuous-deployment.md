@@ -62,8 +62,7 @@ from the `master` branch. This makes sure the code you are merging into `master`
 is exactly the same as that which you're testing.
 
    ```
-   $ git fetch origin master
-   $ git merge origin/master
+   $ git pull
    ```
 
 1. When the feature is complete and tested locally, push the feature branch.
@@ -108,8 +107,7 @@ follow the standard 'Develop a feature' workflow.*
 
    ```
    $ git checkout master
-   $ git fetch origin master
-   $ git merge origin/master
+   $ git pull
    ```
 
 1. Make the changes directly on `master` and commit.
