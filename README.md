@@ -39,6 +39,23 @@ deployed together.
 
 [Learn more](./release-deployment.md)
 
+## Branch Naming
+
+Branch naming is left mostly up to the discretion of the person creating the branch
+with a few exceptions. `master` and `develop` are always named exactly that. When a
+feature/bugfix is related to a JIRA ticket we prefer that the branch name start with
+the ticket number (eg. `hyb-545-add-headerbar`). Hotfix and release branches should
+follow a pattern defined in the project type documents (ie. `release-vX.Y.Z` or
+(eg. `hotfix-hyb-244-fix-db-connection-code`), but feature and bugfix branches
+**don not** need a common prefix (ie. `feature-*`).
+
+Branch names should use dashes to separate words of the name and should avoid any
+uppercase letters.
+
+Other than that, choose names that are descriptive and concise. You don't need a branch
+name that is a novel because most branches should be relatively short-lived (hours to
+days, not weeks).
+
 ## Anti-Patterns
 
 After reading all of the above, none of the [Anti-Patterns](antipatterns.md) should
