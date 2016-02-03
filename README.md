@@ -44,7 +44,9 @@ deployed together.
 Branch naming is left mostly up to the discretion of the person creating the branch
 with a few exceptions. `master` and `develop` are always named exactly that. When a
 feature/bugfix is related to a JIRA ticket we prefer that the branch name start with
-the ticket number (eg. `hyb-545-add-headerbar`).
+the ticket number (eg. `hyb-545-add-headerbar`). Feature and bugfix branches
+**don't** need a common prefix (ie. `feature-*`), but hotfix branches should be
+prefixed with `hotfix-*` (eg. `hotfix-hyb-244-fix-db-connection-code`).
 
 Branch names should use dashes to separate words of the name and should avoid any
 uppercase letters.
