@@ -77,8 +77,6 @@ There's nothing special about that. Each developer follows the above [Develop a 
 
 **TBD: Insert diagram**
 
-1. Make sure your `master` and `develop` branches are up-to-date
-
 1. Merge `master` into `develop` to ensure the new release will contain the
    latest production code. This reduces the chance of a merge conflict during
    the release.
@@ -107,42 +105,37 @@ There's nothing special about that. Each developer follows the above [Develop a 
    $ git push
    ```
 
-1. When the code is ready to release, navigate to the project page on Github and
-   draft a new release with the following settings:
+1. When the code is ready to release, navigate to the project on
+   [Github](www.github.com) and open a pull request with the following branch
+   settings:
+   * Base: `master`
+   * Compare: `release-vX.Y.Z`
+   Paste the Release Checklist into the PR body. Each project should define a release
+   checklist. It will vary across projects, but you can refer to the Astro [Release](https://github.com/mobify/astro/blob/develop/RELEASE.md) document
+   for an example.
+
+1. At some point in the checklist you will merge the release branch into `master`.
+   You can do this by using the "Merge pull request" button on the release PR.
+
+1. Now you are ready to create the actual release. Navigate to the project page
+   on Github and draft a new release with the following settings:
    * Tag version: `vX.Y.Z`
-   * Target: `release-vX.Y.Z`
+   * Target: `master`
    * Release title: `Release vX.Y.Z`
    * Description: Include a high-level list of things changed in this release.
 
    Click `Publish release`.
 
-1. Make sure `master` is up to date.
+1. Merge the `release-vX.Y.Z` into `develop`.
 
     ```
-    $ git checkout master
-    $ git pull
-    ```
-
-1. Merge the `release-vX.Y.Z` branch into `master`.
-
-    ```
+    $ git checkout develop
     $ git merge release-vX.Y.Z
     $ git push
     ```
 
-1. Make sure `develop` is up to date.
-
-    ```
-    $ git checkout develop
-    $ git pull
-    ```
-
-1. Merge `master` into `develop`.
-
-    ```
-    $ git merge master
-    $ git push
-    ```
+1. Finish off the tasks in the release checklist. Once everything is done, close
+   the release PR.
 
 **TBD: Discuss**
 Mike N: Long-lived release branches, yes/no?
@@ -161,23 +154,23 @@ Mike N: That probably means recreating the release branch, unless we have short-
 
 ### Production hot fix
 
+A production hotfix is very similar to a full-scale release except that you do
+your work in a branch taken directly off of `master`. A hotfix should occur very
+rarely and be used only when the fix is time-sensitive. If you aren't pressed
+for time just do a regular release. If your release process is long and painful,
+optimize that as opposed to using a hotfix.
+
 **TBD: Insert diagram**
 
-1. Make sure your `master` branch is up-to-date
+1. Create a hot fix branch based off of `master`.
 
    ```
    $ git checkout master
-   $ git pull
-   ```
-
-1. Create a hot fix branch based off of `master`
-
-   ```
    $ git checkout -b hotfix-documentation-broken-links
    $ git push --set-upstream hotfix-documentation-broken-links
    ```
 
-1. Add a test case to validate the bug, fix the bug, and commit
+1. Add a test case to validate the bug, fix the bug, and commit.
 
    ```
    $ git add -A .
@@ -189,14 +182,35 @@ Mike N: That probably means recreating the release branch, unless we have short-
    with the following branch settings:
    * Base: `master`
    * Compare: `hotfix-documentation-broken-links`
+   Paste your release checklist into the PR and work through the PR to get the
+   hotfix into production.
 
-1. When the pull request has been reviewed and ![+1'd](images/plus1.png)
-   , merge and close it and then delete the `hotfix-documentation-broken-links`
-   branch. This can all be done from the Github pull-request page.
+1. At some point in the checklist you will merge the hotfix branch into `master`.
+  You can do this by using the "Merge pull request" button on the release PR.
 
-**Note: At this point releasing a hotfix is _exactly_ the same as a regular release.
-        Use the [Create and deploy a release](#Create and deploy a release) workflow
-        replacing `develop` with your hotfix branch `hotfix-documentation-broken-links`.**
+1. Now you are ready to create the actual release. Navigate to the project page
+  on Github and draft a new release with the following settings:
+  * Tag version: `vX.Y.Z`
+  * Target: `master`
+  * Release title: `Release vX.Y.Z (hotfix)`
+  * Description: Include a high-level list of things changed in this release.
+
+  Click `Publish release`.
+
+  *Note: Hotfix releases _are_ actual releases. You should bump at least the patch part
+  of the version when releasing a hotfix and so even hotfixes go through the
+  process of creating a release like this.*
+
+1. Merge the `hotfix-documentation-broken-links` into `develop`.
+
+   ```
+   $ git checkout develop
+   $ git merge hotfix-documentation-broken-links
+   $ git push
+   ```
+
+1. Finish off the tasks in the release checklist. Once everything is done, close
+  the hotfix PR.
 
 ## Migrate a legacy project
 

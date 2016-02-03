@@ -64,6 +64,8 @@ at Mobify. Think of it as the git equivalent of "Javascript - The Good Parts." :
 
 ### Updating branches
 
+** Important **
+
 Git always works on a local copy of a repository. As a result, whenever you do any
 operations that involve multiple branches (eg. merge) be sure to update both branches
 before performing the operation.
