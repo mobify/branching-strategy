@@ -20,7 +20,7 @@ and how to deal with them from a branching point of view.
 
 ## Branches Overview
 
-![Release Deployment workflow](images/release-deployment.svg)
+![Release Deployment workflow](images/release-deployment.png)
 
 | Branch           | Commits Allowed? | Base Branch      | Description    |
 | :----------------|:-----------------|:-----------------|:---------------|
