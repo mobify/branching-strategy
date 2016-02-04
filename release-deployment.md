@@ -35,7 +35,7 @@ and how to deal with them from a branching point of view.
 
 ### Develop a new feature
 
-**TBD: Insert diagram**
+![Feature branch](images/feature-branch.png)
 
 1. Make sure your `develop` branch is up-to-date
 
