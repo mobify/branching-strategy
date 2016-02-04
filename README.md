@@ -56,6 +56,19 @@ Other than that, choose names that are descriptive and concise. You don't need a
 name that is a novel because most branches should be relatively short-lived (hours to
 days, not weeks).
 
+## Protected Branches
+
+GitHub recently added [Protected branches](https://github.com/blog/2051-protected-branches-and-required-status-checks). Protected branches:
+- Can't be force pushed
+- Can't be deleted
+- Can't have changes merged into them until required status checks pass
+
+`master` and `develop` branches should always be protected.
+
+Projects that have continuous integration with a service such as CircleCI should
+have their `master` and `develop` (if applicable) branches protected by a status
+check requiring CircleCI builds to pass before changes can be merged.
+
 ## Anti-Patterns
 
 After reading all of the above, none of the [Anti-Patterns](antipatterns.md) should
