@@ -15,7 +15,6 @@ and how to deal with them from a branching point of view.
   - [Change in plan, pull a feature from a release](#change-in-plan-pull-a-feature-from-a-release)
   - [Change request](#change-request)
   - [Production hot fix](#production-hot-fix)
-  - [Production hot fix](#production-hot-fix)
 - [Migrate a legacy project](#migrate-a-legacy-project)
 
 ## Branches Overview
@@ -191,6 +190,7 @@ Mike N: That probably means recreating the release branch, unless we have short-
 1. Add a test case to validate the bug, fix the bug, and commit
 
    ```
+   ... add test, fix bug, verify
    $ git add -A .
    $ git commit -m "Fix broken links"
    $ git push
