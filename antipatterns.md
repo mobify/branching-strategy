@@ -18,7 +18,7 @@ is ready to be reviewed and tested.
 
 * * *
 
-## Don't fix a bug in `master`
+## Don't fix bugs in `master`
 
 **Do**: Create a hotfix branch off of `master`. Write a test case, fix the bug
 and create a pull request.
