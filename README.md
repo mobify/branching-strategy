@@ -63,7 +63,7 @@ GitHub recently added [Protected branches](https://github.com/blog/2051-protecte
 - Can't be deleted
 - Can't have changes merged into them until required status checks pass
 
-`master` and `develop` branches should always be protected.
+`master` and `develop` branches should always be protected. These protected branches should never be directly committed to. They should only be updated through PR merges.
 
 Projects that have continuous integration with a service such as CircleCI should
 have their `master` and `develop` (if applicable) branches protected by a status
