@@ -18,11 +18,11 @@ and how to deal with them from a branching point of view.
 
 **TBD: Insert diagram**
 
-| Branch           | Commits Allowed? | Base Branch      | Description    |
-| :----------------|:-----------------|:-----------------|:---------------|
-| `master`         | NO               | N/A              | What is live in production (**stable**).<br/>A pull request is required to merge code into `master`. |
-| feature          | YES              | `master`         | Cutting-edge features (**unstable**). These branches are used for any maintenance features / active development. |
-| `hotfix-*`       | YES              | `master`         | These are bug fixes against production.<br/> |
+| Branch  | Protected?  | Base Branch      | Description    |
+| :-------|:------------|:-----------------|:---------------|
+| `master`| YES         | N/A              | What is live in production (**stable**).<br/>A pull request is required to merge code into `master`. |
+| feature | NO          | `master`         | Cutting-edge features (**unstable**). These branches are used for any maintenance features / active development. |
+| `hotfix-*` | NO       | `master`         | These are bug fixes against production.<br/> |
 
 ## Develop a new feature
 

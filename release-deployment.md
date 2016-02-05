@@ -22,14 +22,14 @@ and how to deal with them from a branching point of view.
 
 **TBD: Insert diagram**
 
-| Branch           | Commits Allowed? | Base Branch      | Description    |
-| :----------------|:-----------------|:-----------------|:---------------|
-| `master`         | NO               | N/A              | What is live in production (**stable**).<br/>A pull request is required to merge code into `master`. |
-| `develop`        | NO               | `master`         | The latest state of development (**unstable**). |
-| feature          | YES              | `develop`        | Cutting-edge features (**unstable**). These branches are used for any maintenance features / active development. |
-| `release-vX.Y.Z` | NO               | `master`         | A temporary release branch that follows the [semver](http://semver.org/) versioning. This is what is sent to UAT.<br/>A pull request is required to merge code into any `release-vX.Y.Z` branch. |
-| bugfix           | YES              | `release-vX.Y.Z` | Any fixes against a release branch should be made in a bug-fix branch. The bug-fix branch should be merged into the release branch and also into develop. This is one area where we’re deviating from GitFlow. |
-| `hotfix-*`       | YES              | `master`         | These are bug fixes against production.<br/>This is used because develop might have moved on from the last published state.<br/>Remember to merge this back into develop and any release branches. |
+| Branch        | Protected? | Base Branch | Description    |
+| :-------------|:-----------|:------------|:---------------|
+| `master`      | YES        | N/A         | What is live in production (**stable**).<br/>A pull request is required to merge code into `master`. |
+| `develop`     | YES        | `master`    | The latest state of development (**unstable**). |
+| feature       | NO         | `develop`   | Cutting-edge features (**unstable**). These branches are used for any maintenance features / active development. |
+| `release-vX.Y.Z` | NO      | `master`    | A temporary release branch that follows the [semver](http://semver.org/) versioning. This is what is sent to UAT.<br/>A pull request is required to merge code into any `release-vX.Y.Z` branch. |
+| bugfix        | NO         | `release-vX.Y.Z` | Any fixes against a release branch should be made in a bug-fix branch. The bug-fix branch should be merged into the release branch and also into develop. This is one area where we’re deviating from GitFlow. |
+| `hotfix-*`    | NO         | `master`    | These are bug fixes against production.<br/>This is used because develop might have moved on from the last published state.<br/>Remember to merge this back into develop and any release branches. |
 
 ## Use Cases
 
