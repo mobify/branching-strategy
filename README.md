@@ -6,7 +6,7 @@ Each workflow tries to make things as simple as possible while still being flexi
 
 At the end of each document is a list of common scenarios you will encounter and how Mobify's branching strategies apply.
 
-## What is the purpose of this repository?
+## What is the purpose of this document?
 
 As Mobify continues to grow and expand its operations globally, consistency across all teams and partners is a key
 focus. The more aligned all Mobify projects are, the more productive everyone will be.
@@ -17,10 +17,11 @@ This repository and its documentation outline:
 * What to do when a hot fix is required
 * Anything else related to our branching strategy
 
-### What the repository is not:
+### What the document is not:
 
 * Written in stone. Pull requests are welcome and we will update this document with lessons learned and improvements as we go
 * The one and only way to work on projects. There are always certain edge cases where things have to be tweaked, but don't let tweaking become the norm
+* A guide on how to deal with deployment. For instance, if you just merged into master and need to revert, this is not a problem we need to deal with in our branching strategy. This is dealt with on a team by team basis. For example when needing to roll back, with adaptive projects you would revert bundles with Cloud, or with a docker based project, revert to an old artifact. This is not something that we deal within our version control system.
 
 ## Project Types
 
