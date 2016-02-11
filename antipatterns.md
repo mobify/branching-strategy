@@ -9,7 +9,7 @@ even think of doing anything you see below.
 
 ## Don't develop a feature in `develop` or `master`
 
-**Do**: Create a feature branch off of `develop` or `master`. When the
+**Instead**: Create a feature branch off of `develop` or `master`. When the
 feature is developed and tested, create a pull request.
 
 **Why?**: All code changes require a code review and verification by our QA team.
@@ -18,24 +18,24 @@ is ready to be reviewed and tested.
 
 * * *
 
-## Don't fix a bug in `master`
+## Don't fix bugs in `master`
 
-**Do**: Create a hotfix branch off of `master`. Write a test case, fix the bug
+**Instead**: Create a hotfix branch off of `master`. Write a test case, fix the bug
 and create a pull request.
 
 **Why?**: Production bug fixes are super critical and it's especially important
 to properly review them. If nobody is around to review, quickly escalate to your
 lead.
 
-**But... my boss or project manager stands next to me** and tells me to _just merge it_?
-Kindly point them to this document and ask for help to escalate and find someone to review
+**But... my boss or project manager stands next to me** and says, "_Deploy it already!_"
+Kindly point them to this document, ask for help to escalate and find someone who can review
 the pull request.
 
 * * *
 
 ## Don't merge your pull requests without a +1
 
-**Do**: Ask a team member for a code review and to +1 your changes.
+**Instead**: Ask a team member for a code review and to +1 your changes.
 
 **Why?**: _Nobody is perfect._ Having said that, we always want to make sure at
 least one other team member reviews our code. Performance, readability, bugs,

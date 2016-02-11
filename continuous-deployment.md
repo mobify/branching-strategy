@@ -80,34 +80,41 @@ follow the standard 'Develop a feature' workflow.*
 
 ![Hotfix **use rarely**](images/continuous-hotfix.png)
 
-1. Make sure your `master` branch is up-to-date.
+*This is very similar to how we [Develop a new feature](#develop-a-new-feature)
+described above.*
+
+1. Make sure your `master` branch is up-to-date
 
    ```
    $ git checkout master
-   $ git pull
+   $ git fetch
+   $ git merge origin/master
    ```
 
-1. Make the changes directly on `master` and commit.
+1. Create a hot fix branch based off of `master`
 
    ```
-   ... code code code
-   $ git add -A .
-   $ git commit -m "Fix broken links"
+   $ git checkout -b hotfix-documentation-broken-links
+   $ git push --set-upstream hotfix-documentation-broken-links
    ```
 
-1. When the fix is complete and tested locally, verify it with at least one other,
-engineer. Push the commit to Github.
+1. Add a test case to validate the bug, fix the bug, and commit
    *When doing a hotfix you should at _least_ pair on the fix with somebody or
    review it in person with one other engineer before releasing it. We're
    running without training wheel's here and want to do our best not to have to
    do a stream of hotfixes in production.*
-
    ```
-   $ git push origin master
+   ... add test, fix bug, verify
+   $ git add -A .
+   $ git commit -m "Fix broken links"
+   $ git push
    ```
 
-1. Deploy `master` to a staging environment to verify (_some teams have this
-automated, some prefer a manual deploy with some conventions, either is fine_).
+1. Navigate to the project on [Github](www.github.com) and open a pull request
+   with the following branch settings:
+   * Base: `master`
+   * Compare: `hotfix-documentation-broken-links`
 
-1. If everything is good in staging, promote it to production and you're done.
-If not, roll back production to the previous release and return to Step 1.
+1. When the pull request has been reviewed and ![+1'd](images/plus1.png)
+   , merge and close it and then delete the `hotfix-documentation-broken-links`
+   branch. This can all be done from the Github pull-request page.
