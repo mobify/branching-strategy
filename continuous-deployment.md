@@ -26,7 +26,7 @@ and how to deal with them from a branching point of view.
 
 ## Develop a new feature
 
-**TBD: Insert diagram**
+![Hotfix **use rarely**](images/continuous-new-feature.png)
 
 1. Create a feature branch based off of `master`.
 
@@ -78,7 +78,7 @@ conflicts.
 workflow to push a hotfix to production when you can't spare the time to
 follow the standard 'Develop a feature' workflow.*
 
-![Hotfix **use rarely**](images/hotfix.png)
+![Hotfix **use rarely**](images/continuous-hotfix.png)
 
 1. Make sure your `master` branch is up-to-date.
 
