@@ -17,23 +17,28 @@ This repository and its documentation outline:
 * What to do when a hot fix is required
 * Anything else related to our branching strategy
 
-### What the document is not:
+### This document is not...
 
-* Written in stone. Pull requests are welcome and we will update this document with lessons learned and improvements as we go
-* The one and only way to work on projects. There are always certain edge cases where things have to be tweaked, but don't let tweaking become the norm
-* A guide on how to deal with deployment. For instance, if you just merged into master and need to revert, this is not a problem we need to deal with in our branching strategy. This is dealt with on a team by team basis. For example when needing to roll back, with adaptive projects you would revert bundles with Cloud, or with a docker based project, revert to an old artifact. This is not something that we deal within our version control system.
+**Written in stone.** Pull requests welcome! We will iterate on this document
+based on feedback.
+
+**The one true way to work on projects.** There are edgecases and this document
+does not intent to answer them all.
+
+**A guide on deployment or workflows.** Build deployment and workflow stratgies
+on top of these branching models in a way that best fits your team.
 
 ## Project Types
 
 Depending on the type of project, one of two branching strategies is used:
 
-### 1) Continuous Deployment
+### Continuous Deployment
 
 Use this strategy for projects where features get deployed as soon as they're ready.
 
 [Learn more](./continuous-deployment.md)
 
-### 2) Release Deployment
+### Release Deployment
 
 Use this strategy for projects where features get bundled into a release and then
 deployed together.
