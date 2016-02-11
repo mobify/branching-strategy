@@ -78,7 +78,7 @@ conflicts.
 workflow to push a hotfix to production when you can't spare the time to
 follow the standard 'Develop a feature' workflow.*
 
-**TBD: Insert diagram**
+![Hotfix **use rarely**](images/hotfix.png)
 
 1. Make sure your `master` branch is up-to-date.
 
