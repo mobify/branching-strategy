@@ -21,11 +21,11 @@ This repository and its documentation outline:
 
 **Written in stone.** Pull requests welcome!
 
-**The one true way to work on projects.** This document covers the 95% of cases
-that Mobifiers encounter in their day to day. The other 5% is up to you!
+**A guide to every git edgecase ever.** It covers 95% of the day to day. The
+other 5% is up to you!
 
-**A complete guide to deployment or workflow strategies.** Build these on top of
-this model in a way that best fits your team.
+**A guide to deployment or workflow strategies.** Build these on top of these
+flows in a way that best fits your team.
 
 ## Project Types
 
