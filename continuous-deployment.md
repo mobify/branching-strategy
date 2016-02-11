@@ -16,7 +16,7 @@ and how to deal with them from a branching point of view.
 
 ## Branches Overview
 
-**TBD: Insert diagram**
+![Github flow workflow](images/continuous-overview.png)
 
 | Branch  | Protected?  | Base Branch      | Description    |
 | :-------|:------------|:-----------------|:---------------|
@@ -26,21 +26,12 @@ and how to deal with them from a branching point of view.
 
 ## Develop a new feature
 
-**TBD: Insert diagram**
+![Hotfix **use rarely**](images/continuous-new-feature.png)
 
-1. Make sure your `master` branch is up-to-date.
+1. Create a feature branch based off of `master`.
 
    ```
    $ git checkout master
-   $ git pull
-   ```
-
-1. Create a feature branch based off of `master`. It's useful, if you work
-from tickets in JIRA, to include the ticket number in the branch name. Pushing
-it as soon as it's created allows other developers to see it, and also allows
-you to create a pull request early, for visibility and to get early feedback:
-
-   ```
    $ git checkout -b MYTEAM-123-new-documentation
    $ git push --set-upstream MYTEAM-123-new-documentation
    ```
@@ -54,21 +45,6 @@ you to create a pull request early, for visibility and to get early feedback:
    $ ... make more changes
    $ git add -A .
    $ git commit -m "Fix some spelling errors"
-   $ git push
-   ```
-
-1. As a final step before creating a pull request, be sure to update your branch
-from the `master` branch. This makes sure the code you are merging into `master`
-is exactly the same as that which you're testing.
-
-   ```
-   $ git fetch origin master
-   $ git merge origin/master
-   ```
-
-1. When the feature is complete and tested locally, push the feature branch.
-
-   ```
    $ git push
    ```
 
@@ -102,14 +78,13 @@ conflicts.
 workflow to push a hotfix to production when you can't spare the time to
 follow the standard 'Develop a feature' workflow.*
 
-**TBD: Insert diagram**
+![Hotfix **use rarely**](images/continuous-hotfix.png)
 
 1. Make sure your `master` branch is up-to-date.
 
    ```
    $ git checkout master
-   $ git fetch origin master
-   $ git merge origin/master
+   $ git pull
    ```
 
 1. Make the changes directly on `master` and commit.
