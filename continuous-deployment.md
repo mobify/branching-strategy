@@ -16,7 +16,7 @@ and how to deal with them from a branching point of view.
 
 ## Branches Overview
 
-[![Github flow workflow](images/github-flow.png)](https://guides.github.com/introduction/flow/)
+![Github flow workflow](images/github-flow.jpg)]
 
 | Branch  | Protected?  | Base Branch      | Description    |
 | :-------|:------------|:-----------------|:---------------|
