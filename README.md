@@ -19,14 +19,13 @@ This repository and its documentation outline:
 
 ### This document is not...
 
-**Written in stone.** Pull requests welcome! We will iterate on this document
-based on feedback.
+**Written in stone.** Pull requests welcome!
 
-**The one true way to work on projects.** There are edgecases and this document
-does not intent to answer them all.
+**The one true way to work on projects.** This document covers the 95% of cases
+that Mobifiers encounter in their day to day. The other 5% is up to you!
 
-**A guide on deployment or workflows.** Build deployment and workflow stratgies
-on top of these branching models in a way that best fits your team.
+**A complete guide to deployment or workflow strategies.** Build these on top of
+this model in a way that best fits your team.
 
 ## Project Types
 
