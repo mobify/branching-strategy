@@ -75,7 +75,7 @@ There's nothing special about that. Each developer follows the above [Develop a 
 
 ### Create and deploy a release
 
-**TBD: Insert diagram**
+![Create and deploy a release](images/release-release.png)
 
 1. Merge `master` into `develop` to ensure the new release will contain the
    latest production code. This reduces the chance of a merge conflict during
