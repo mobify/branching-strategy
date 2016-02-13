@@ -1,20 +1,38 @@
+```
+
+                                                   oOFFFo               oFFFFo      
+                                                 iFfffffffF      y    Fffffffffb    
+                                                 ffffffffffF iMMMMBF ibfffffffff    
+                                                 Yyffffffff      Y    FfffffffyF    
+                                              yyy  YFyyyF               FyyyyF      
+                                               yBy                                  
+                                            yM                                      
+                                          yF                                        
+                                        yM                                          
+           oFBbo               oOFMy   F            oFBbo               oOFMyo      
+        iF      IB           Ob      Yo           F      fB           yO      Yb    
+        F        fy yyyyyMy yb        Y  yyyyyM  F        fy yyyyyMy ib        f    
+        Yy       f      M    b        F      M   Yy       fb     M    b        O    
+         YByyyyyF             YyyyyyBF            IByyyyyF             YyyyyyyF     
+```
+
 # Mobify Branching Strategy
 
-This document represents Mobify's current branching and release strategy. It 
-provides a brief overview of the two release models that we use: 
-[release-based](release-deployment.md) and 
+This document represents Mobify's current branching and release strategy. It
+provides a brief overview of the two release models that we use:
+[release-based](release-deployment.md) and
 [continuous delivery](continuous-deployment.md).
 
-Each workflow tries to make things as simple as possible while still being 
+Each workflow tries to make things as simple as possible while still being
 flexible enough to work for all teams at Mobify.
 
-At the end of each document is a list of common scenarios you will encounter 
+At the end of each document is a list of common scenarios you will encounter
 and how Mobify's branching strategies apply.
 
 ## What is the purpose of this document?
 
-As Mobify continues to grow and expand its operations globally, consistency 
-across all teams and partners is a key focus. The more aligned all Mobify 
+As Mobify continues to grow and expand its operations globally, consistency
+across all teams and partners is a key focus. The more aligned all Mobify
 projects are, the more productive everyone will be.
 
 This repository and its documentation outline:
