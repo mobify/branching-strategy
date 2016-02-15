@@ -259,7 +259,7 @@ The process for tagging and merging is a bit different when deploying a bundle, 
 
 1. Once the customer has approved the bundle. The bundle is published to production and post launch tests occur. Once all tests have passed, the pull request is merged into `master`.
 
-1. Finish the _Github release workflow_ as described above and ensure that these specific changes are added to the _release notes_ of the _Github release_:
+1. Finish the _Github release workflow_ as described above and ensure that these specific changes are added to the _release notes_ draft of the _Github release_:
    * Release title: `Release vX.Y.Z - Bundle <number>`
    * Description (body): This should also include a link to a confluence JIRA report page that lists all issues in the release.
 
