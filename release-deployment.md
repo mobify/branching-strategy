@@ -260,7 +260,7 @@ The process for tagging and merging is a bit different when deploying a bundle, 
 1. Once the customer has approved the bundle. The bundle is published to production and post launch tests occur. Once all tests have passed, the pull request is merged into `master`.
 
 1. Finish the release workflow as described above and ensure that these specific changes are added:
-   *Description: This should also include a link to a confluence JIRA report page that lists all issues in the release.
+   * Description: This should also include a link to a confluence JIRA report page that lists all issues in the release.
    Click `Publish release`.
 
    **NOTE: the release tag will be 1 commit ahead of the bundle commit**
