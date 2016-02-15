@@ -1,3 +1,6 @@
+| [Home](README.md) ▸ **Continuous Deployment** |
+|-----|
+
 # Continuous Deployment
 
 Use this strategy for projects where features get deployed as soon as they're ready.
