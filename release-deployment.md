@@ -214,3 +214,84 @@ code in it already.
 
 To migrate any git project to our branching strategy, please follow the instructions
 in the [Migration](migration.md) document.
+
+# Scenarios
+
+This section outlines specific scenarios and the steps to take to ensure success.
+
+## Bundle Deployment
+
+The process for tagging and merging is a bit different when deploying a bundle, the steps to take are outlined here:
+
+![Bundle Flow](images/release-deployment-bundle.png)
+
+1. Merge `master` into `develop` to ensure the new release will contain the
+   latest production code. This reduces the chance of a merge conflict during
+   the release.
+
+   ```
+   $ git checkout develop
+   $ git merge master
+   ```
+
+1. Create a new `release-vX.Y.Z` release branch off of `develop`.
+
+   ```
+   $ git checkout -b release-vX.Y.Z
+   $ git push --set-upstream release-vX.Y.Z
+   ```
+
+1. Ensure all features are merged into `release-v.X.Y.Z`
+
+1. Create a bundle to be sent to the customer for verification and approval off of the `release-	vX.Y.Z` branch.
+
+	If you have installed the automated bundle message script found [here] (https://	mobify.atlassian.net/wiki/questions/81789082/how-do-i-automate-a-bundle-message-using-bash). Follow 	these steps:
+	
+	```
+	$ grunt push -m "$(message Mobile X.Y.Z)"
+	```
+	If you have **not** installed the automated bundle message script, follow these steps:
+	
+	```
+	$ grunt push -m "Mobile X.Y.X:<last commit hash in bundle>, <branch name>"
+	```
+
+1. Navigate to the project on [Github](www.github.com) and open a pull request
+   with the following branch settings:
+   * Base: `master`
+   * Compare: `release-vX.Y.Z`
+   * Name/Summary: `DEPLOYMENT MERGE: release-v.X.Y.Z, bundle <bundle number that was sent to customer>`
+   * Description:
+     
+   ```
+   Status: **Out to Customer**
+   Owner: <Your Github username>
+   Reviewers: Customer
+   
+   ## Jira Tickets:
+	- [x] <List of JIRA Tickets associated with release>
+
+	## Todos:
+	- [ ] Customer Approves Bundle 200
+	- [ ] Deploy Bundle 200
+	- [ ] Clean Up Repo
+   ```
+1. Once the customer has approved the bundle, the bundle is published, post launch tests occur and if 	passed the PR is merged into `master`.
+
+1. Now you are ready to create the actual release. Navigate to the project page
+   on Github and draft a new release with the following settings:
+   * Tag version: `vX.Y.Z`
+   * Target: `master`
+   * Release title: `Release vX.Y.Z`
+   * Description: Include a high-level list of things changed in this release. This should also 	include a link to a confluence JIRA report page that lists all issues in the release.
+   Click `Publish release`.
+   
+   **NOTE: the release tag will be 1 commit ahead of the bundle commit**
+
+1. Merge the `release-vX.Y.Z` into `develop`.
+
+    ```
+    $ git checkout develop
+    $ git merge release-vX.Y.Z
+    $ git push
+    ```
