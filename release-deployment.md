@@ -122,7 +122,6 @@ There's nothing special about that. Each developer follows the above [Develop a 
    * Target: `master`
    * Release title: `Release vX.Y.Z`
    * Description: Include a high-level list of things changed in this release.
-
    Click `Publish release`.
 
 1. Merge the `release-vX.Y.Z` into `develop`.
@@ -216,3 +215,54 @@ code in it already.
 
 To migrate any git project to our branching strategy, please follow the instructions
 in the [Migration](migration.md) document.
+
+# Scenarios
+
+This section outlines specific scenarios and the steps to take to ensure success.
+
+## Deploying an Adaptive.js/Mobify.js Bundle to Production
+
+The process for tagging and merging is a bit different when deploying a bundle, the steps to take are outlined here:
+
+![Bundle Flow](images/release-deployment-bundle.png)
+
+1. Ensure all features are merged into `release-v.X.Y.Z`
+
+1. Create a bundle to be sent to the customer for verification and approval off of the `release-vX.Y.Z` branch.
+
+	Ensure you have installed the automated bundle message script found [here] (https://	mobify.atlassian.net/wiki/questions/81789082/how-do-i-automate-a-bundle-message-using-bash). Follow these steps:
+
+	```
+	$ grunt push -m "$(message Mobile X.Y.Z)"
+	```
+
+1. When creating a pull request to merge the release branch into `master` ensure that the standard workflow for _creating a release_ is followed with these specific changes:
+   * Name/Summary: `DEPLOYMENT MERGE: release-v.X.Y.Z, bundle <bundle number that was sent to customer>`
+   * Description:
+
+   ```
+   Status: **Out to Customer**
+   Owner: <Your Github username>
+   Reviewers: Customer
+
+   ## Bundle:
+   - <bundle link sent to customer>
+
+   ## Jira Tickets:
+	- [x] <List of JIRA Tickets associated with release>
+
+	## Todos:
+	- [ ] Customer Approves Bundle <number>
+	- [ ] Deploy Bundle <number>
+	- [ ] Clean Up Repo
+   ```
+
+1. Once the customer has approved the bundle. The bundle is published to production and post launch tests occur. Once all tests have passed, the pull request is merged into `master`.
+
+1. Finish the _Github release workflow_ as described above and ensure that these specific changes are added to the _release notes_ draft of the _Github release_:
+   * Release title: `Release vX.Y.Z - Bundle <number>`
+   * Description: This should also include a link to a confluence JIRA report page that lists all issues in the release.
+
+   Click `Publish release`.
+
+   **NOTE: the release tag will be 1 commit ahead of the bundle commit**
