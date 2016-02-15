@@ -226,22 +226,6 @@ The process for tagging and merging is a bit different when deploying a bundle, 
 
 ![Bundle Flow](images/release-deployment-bundle.png)
 
-1. Merge `master` into `develop` to ensure the new release will contain the
-   latest production code. This reduces the chance of a merge conflict during
-   the release.
-
-   ```
-   $ git checkout develop
-   $ git merge master
-   ```
-
-1. Create a new `release-vX.Y.Z` release branch off of `develop`.
-
-   ```
-   $ git checkout -b release-vX.Y.Z
-   $ git push --set-upstream release-vX.Y.Z
-   ```
-
 1. Ensure all features are merged into `release-v.X.Y.Z`
 
 1. Create a bundle to be sent to the customer for verification and approval off of the `release-vX.Y.Z` branch.
