@@ -103,7 +103,6 @@ There's nothing special about that. Each developer follows the above [Develop a 
    $ git commit -m "Adjust label to align with button"
    $ git push
    ```
-   
 1. When the code is ready to release, navigate to the project on
    [Github](www.github.com) and open a pull request with the following branch
    settings:
@@ -122,7 +121,6 @@ There's nothing special about that. Each developer follows the above [Develop a 
    * Target: `master`
    * Release title: `Release vX.Y.Z`
    * Description: Include a high-level list of things changed in this release. 
-  
    Click `Publish release`.
 
 1. Merge the `release-vX.Y.Z` into `develop`.
