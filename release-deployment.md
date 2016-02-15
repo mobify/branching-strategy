@@ -220,7 +220,7 @@ in the [Migration](migration.md) document.
 
 This section outlines specific scenarios and the steps to take to ensure success.
 
-## Bundle Deployment
+## Deploying an Adaptive.js/Mobify.js Bundle to Production
 
 The process for tagging and merging is a bit different when deploying a bundle, the steps to take are outlined here:
 
