@@ -236,7 +236,7 @@ The process for tagging and merging is a bit different when deploying a bundle, 
 	$ grunt push -m "$(message Mobile X.Y.Z)"
 	```
 
-1. When creating a pull request to merge the release branch into `master` ensure that the standard workflow is followed with these specific changes:
+1. When creating a pull request to merge the release branch into `master` ensure that the standard workflow for _creating a release_ is followed with these specific changes:
    * Name/Summary: `DEPLOYMENT MERGE: release-v.X.Y.Z, bundle <bundle number that was sent to customer>`
    * Description:
 
