@@ -252,10 +252,7 @@ The process for tagging and merging is a bit different when deploying a bundle, 
 	$ grunt push -m "$(message Mobile X.Y.Z)"
 	```
 
-1. Navigate to the project on [Github](www.github.com) and open a pull request
-   with the following branch settings:
-   * Base: `master`
-   * Compare: `release-vX.Y.Z`
+1. When creating a pull request to merge the branch in ensure that the standard workflow is followed with these specific changes:
    * Name/Summary: `DEPLOYMENT MERGE: release-v.X.Y.Z, bundle <bundle number that was sent to customer>`
    * Description:
 
