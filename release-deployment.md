@@ -103,6 +103,7 @@ There's nothing special about that. Each developer follows the above [Develop a 
    $ git commit -m "Adjust label to align with button"
    $ git push
    ```
+   
 1. When the code is ready to release, navigate to the project on
    [Github](www.github.com) and open a pull request with the following branch
    settings:
@@ -279,6 +280,7 @@ The process for tagging and merging is a bit different when deploying a bundle, 
 	- [ ] Deploy Bundle <number>
 	- [ ] Clean Up Repo
    ```
+   
 1. Once the customer has approved the bundle, the bundle is published, post launch tests occur and if 	passed the PR is merged into `master`.
 
 1. Now you are ready to create the actual release. Navigate to the project page
