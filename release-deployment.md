@@ -261,7 +261,7 @@ The process for tagging and merging is a bit different when deploying a bundle, 
 
 1. Finish the _Github release workflow_ as described above and ensure that these specific changes are added to the _release notes_ draft of the _Github release_:
    * Release title: `Release vX.Y.Z - Bundle <number>`
-   * Description (body): This should also include a link to a confluence JIRA report page that lists all issues in the release.
+   * Description: This should also include a link to a confluence JIRA report page that lists all issues in the release.
 
    Click `Publish release`.
 
