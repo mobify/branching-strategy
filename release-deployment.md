@@ -103,20 +103,8 @@ There's nothing special about that. Each developer follows the above [Develop a 
    $ git commit -m "Adjust label to align with button"
    $ git push
    ```
-1. Create a bundle to be sent to the customer for verification and approval off of the `release-	vX.Y.Z` branch.
-
-	If you have installed the automated bundle message script found [here] (https://	mobify.atlassian.net/wiki/questions/81789082/how-do-i-automate-a-bundle-message-using-bash). Follow 	these steps:
-	
-	```
-	$ grunt push -m "$(message Mobile X.Y.Z)"
-	```
-	If you have **not** installed the automated bundle message script, follow these steps:
-	
-	```
-	$ grunt push -m "Mobile X.Y.X:<last commit hash in bundle>, <branch name>"
-	```
-
-1. When the code is ready to release (bundle has been deployed), navigate to the project on
+   
+1. When the code is ready to release, navigate to the project on
    [Github](www.github.com) and open a pull request with the following branch
    settings:
    * Base: `master`
@@ -133,13 +121,9 @@ There's nothing special about that. Each developer follows the above [Develop a 
    * Tag version: `vX.Y.Z`
    * Target: `master`
    * Release title: `Release vX.Y.Z`
-   * Description: Include a high-level list of things changed in this release. **CST Releases should 	include list of all JIRA tickets**
-
+   * Description: Include a high-level list of things changed in this release. 
+  
    Click `Publish release`.
-   
-   **NOTE: CST Releases, the version tag will be on the merge commit (1 ahead of the bundles last commit)**
-   
-   ![Bundle Flow](images/release-deployment-bundle.png)
 
 1. Merge the `release-vX.Y.Z` into `develop`.
 
