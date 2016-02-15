@@ -1,4 +1,5 @@
-> [Home](README.md) ▸ **Continuous Deployment**
+| [Home](README.md) ▸ **Continuous Deployment** |
+|-----|
 
 # Continuous Deployment
 

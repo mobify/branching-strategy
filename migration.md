@@ -1,4 +1,5 @@
-> [Home](README.md) ▸ **Migration**
+| [Home](README.md) ▸ **Migration** |
+|-----|
 
 # Migration
 

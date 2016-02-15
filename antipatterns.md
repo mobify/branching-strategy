@@ -1,4 +1,5 @@
-> [Home](README.md) ▸ **Anti-Patterns**
+| [Home](README.md) ▸ **Anti-Patterns** |
+|-----|
 
 # Anti-Patterns
 
