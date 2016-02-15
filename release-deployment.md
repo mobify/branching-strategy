@@ -268,12 +268,15 @@ The process for tagging and merging is a bit different when deploying a bundle, 
    Owner: <Your Github username>
    Reviewers: Customer
    
+   ## Bundle:
+   - <bundle link sent to customer>
+   
    ## Jira Tickets:
 	- [x] <List of JIRA Tickets associated with release>
 
 	## Todos:
-	- [ ] Customer Approves Bundle 200
-	- [ ] Deploy Bundle 200
+	- [ ] Customer Approves Bundle <number>
+	- [ ] Deploy Bundle <number>
 	- [ ] Clean Up Repo
    ```
 1. Once the customer has approved the bundle, the bundle is published, post launch tests occur and if 	passed the PR is merged into `master`.
