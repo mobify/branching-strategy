@@ -1,3 +1,6 @@
+| [Home](README.md) ▸ **Anti-Patterns** |
+|-----|
+
 # Anti-Patterns
 
 This page lists some anti-patterns we want to avoid at all cost. Seriously, don't
