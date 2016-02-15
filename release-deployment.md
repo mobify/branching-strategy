@@ -275,20 +275,8 @@ The process for tagging and merging is a bit different when deploying a bundle, 
 
 1. Once the customer has approved the bundle, the bundle is published, post launch tests occur and if 	passed the PR is merged into `master`.
 
-1. Now you are ready to create the actual release. Navigate to the project page
-   on Github and draft a new release with the following settings:
-   * Tag version: `vX.Y.Z`
-   * Target: `master`
-   * Release title: `Release vX.Y.Z`
-   * Description: Include a high-level list of things changed in this release. This should also 	include a link to a confluence JIRA report page that lists all issues in the release.
+1. Finish the release workflow as described above and ensure that these specific changes are added:
+   *Description: This should also include a link to a confluence JIRA report page that lists all issues in the release.
    Click `Publish release`.
 
    **NOTE: the release tag will be 1 commit ahead of the bundle commit**
-
-1. Merge the `release-vX.Y.Z` into `develop`.
-
-    ```
-    $ git checkout develop
-    $ git merge release-vX.Y.Z
-    $ git push
-    ```
