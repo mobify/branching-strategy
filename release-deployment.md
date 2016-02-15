@@ -103,7 +103,7 @@ There's nothing special about that. Each developer follows the above [Develop a 
    $ git commit -m "Adjust label to align with button"
    $ git push
    ```
-   
+
 1. When the code is ready to release, navigate to the project on
    [Github](www.github.com) and open a pull request with the following branch
    settings:
@@ -121,7 +121,7 @@ There's nothing special about that. Each developer follows the above [Develop a 
    * Tag version: `vX.Y.Z`
    * Target: `master`
    * Release title: `Release vX.Y.Z`
-   * Description: Include a high-level list of things changed in this release. 
+   * Description: Include a high-level list of things changed in this release.
    Click `Publish release`.
 
 1. Merge the `release-vX.Y.Z` into `develop`.
@@ -244,15 +244,15 @@ The process for tagging and merging is a bit different when deploying a bundle, 
 
 1. Ensure all features are merged into `release-v.X.Y.Z`
 
-1. Create a bundle to be sent to the customer for verification and approval off of the `release-	vX.Y.Z` branch.
+1. Create a bundle to be sent to the customer for verification and approval off of the `release-vX.Y.Z` branch.
 
 	If you have installed the automated bundle message script found [here] (https://	mobify.atlassian.net/wiki/questions/81789082/how-do-i-automate-a-bundle-message-using-bash). Follow 	these steps:
-	
+
 	```
 	$ grunt push -m "$(message Mobile X.Y.Z)"
 	```
 	If you have **not** installed the automated bundle message script, follow these steps:
-	
+
 	```
 	$ grunt push -m "Mobile X.Y.X:<last commit hash in bundle>, <branch name>"
 	```
@@ -263,15 +263,15 @@ The process for tagging and merging is a bit different when deploying a bundle, 
    * Compare: `release-vX.Y.Z`
    * Name/Summary: `DEPLOYMENT MERGE: release-v.X.Y.Z, bundle <bundle number that was sent to customer>`
    * Description:
-     
+
    ```
    Status: **Out to Customer**
    Owner: <Your Github username>
    Reviewers: Customer
-   
+
    ## Bundle:
    - <bundle link sent to customer>
-   
+
    ## Jira Tickets:
 	- [x] <List of JIRA Tickets associated with release>
 
@@ -280,7 +280,7 @@ The process for tagging and merging is a bit different when deploying a bundle, 
 	- [ ] Deploy Bundle <number>
 	- [ ] Clean Up Repo
    ```
-   
+
 1. Once the customer has approved the bundle, the bundle is published, post launch tests occur and if 	passed the PR is merged into `master`.
 
 1. Now you are ready to create the actual release. Navigate to the project page
@@ -290,7 +290,7 @@ The process for tagging and merging is a bit different when deploying a bundle, 
    * Release title: `Release vX.Y.Z`
    * Description: Include a high-level list of things changed in this release. This should also 	include a link to a confluence JIRA report page that lists all issues in the release.
    Click `Publish release`.
-   
+
    **NOTE: the release tag will be 1 commit ahead of the bundle commit**
 
 1. Merge the `release-vX.Y.Z` into `develop`.
