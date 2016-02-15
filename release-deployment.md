@@ -246,15 +246,10 @@ The process for tagging and merging is a bit different when deploying a bundle, 
 
 1. Create a bundle to be sent to the customer for verification and approval off of the `release-vX.Y.Z` branch.
 
-	If you have installed the automated bundle message script found [here] (https://	mobify.atlassian.net/wiki/questions/81789082/how-do-i-automate-a-bundle-message-using-bash). Follow 	these steps:
+	Ensure you have installed the automated bundle message script found [here] (https://	mobify.atlassian.net/wiki/questions/81789082/how-do-i-automate-a-bundle-message-using-bash). Follow 	these steps:
 
 	```
 	$ grunt push -m "$(message Mobile X.Y.Z)"
-	```
-	If you have **not** installed the automated bundle message script, follow these steps:
-
-	```
-	$ grunt push -m "Mobile X.Y.X:<last commit hash in bundle>, <branch name>"
 	```
 
 1. Navigate to the project on [Github](www.github.com) and open a pull request
