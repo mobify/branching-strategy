@@ -21,8 +21,9 @@ This repository and its documentation outline:
 
 **Written in stone.** Pull requests welcome!
 
-**A guide to every git edgecase ever.** It covers 95% of the day to day. The
-other 5% is up to you!
+**A guide to every git edgecase ever.** It covers 95% of the day to day.
+The other 5% we'll figure out together as we hit them and document them as
+scenarios in this document.
 
 **A guide to deployment or workflow strategies.** Build these on top of these
 flows in a way that best fits your team.
