@@ -1,0 +1,51 @@
+%!Adobe-FontList 1.16
+%Locale:0x409
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:DagnyOT-Light
+FamilyName:Dagny OT
+StyleName:Light
+MenuName:DagnyOT-Light
+StyleBits:0
+WeightClass:350
+WidthClass:5
+AngleClass:0
+FullName:DagnyOT-Light
+WritingScript:Roman
+OutlineFileName:\DagnyOT-Light copy.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+FileLength:51988
+FileModTime:1301960682
+NameArray:0,Mac,4,DagnyOT-Light
+NameArray:0,Win,1,DagnyOT-Light
+NameArray:0,Win,16,Dagny OT
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:DagnyOT-LightIta
+FamilyName:Dagny OT
+StyleName:Light Italic
+MenuName:DagnyOT-LightIta
+StyleBits:0
+WeightClass:350
+WidthClass:5
+AngleClass:1
+FullName:DagnyOT-LightIta
+WritingScript:Roman
+OutlineFileName:\DagnyOT-LightIta.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+FileLength:52408
+FileModTime:1301960682
+NameArray:0,Mac,4,DagnyOT-LightIta
+NameArray:0,Win,1,DagnyOT-LightIta
+NameArray:0,Win,16,Dagny OT
+%EndFont
+
