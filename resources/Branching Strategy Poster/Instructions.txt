@@ -1,0 +1,87 @@
+ADOBE INDESIGN PRINTING INSTRUCTIONS FOR SERVICE PROVIDER REPORT
+
+PUBLICATION NAME: Branching Strategy Poster v1.indd
+
+PACKAGE DATE: 2016-02-18 2:55 PM
+Creation Date: 2016-02-18
+Modification Date: 2016-02-18
+
+CONTACT INFORMATION
+
+Company Name: 
+Contact: 
+Address: 
+
+
+
+
+
+Phone: 
+Fax: 
+Email: 
+
+SPECIAL INSTRUCTIONS AND OTHER NOTES
+
+
+
+
+
+
+External Plug-ins 0
+Non Opaque Objects :On PageNA
+
+FONTS
+2 Fonts Used; 0 Missing, 0 Embedded, 0 Incomplete, 0 Protected
+
+Fonts Packaged
+- Name: DagnyOT-Light; Type: OpenType Type 1, Status: OK
+- Name: DagnyOT-LightIta; Type: OpenType Type 1, Status: OK
+
+
+COLORS AND INKS
+4 Process Inks; 0 Spot Inks
+
+- Name and Type: Process Cyan; Angle: 75.000; Lines/Inch: 70.000
+- Name and Type: Process Magenta; Angle: 15.000; Lines/Inch: 70.000
+- Name and Type: Process Yellow; Angle: 0.000; Lines/Inch: 70.000
+- Name and Type: Process Black; Angle: 45.000; Lines/Inch: 70.000
+
+
+LINKS AND IMAGES
+(Missing & Embedded Links Only)
+Links and Images: 1 Links Found; 0 Modified, 0 Missing 0 Inaccessible
+Images: 0 Embedded, 0 use RGB color space
+
+
+PRINT SETTINGS
+PPD: Xerox WorkCentre 7845, (Xerox7845)
+Printing To: Printer
+Number of Copies: 1
+Reader Spreads: No
+Even/Odd Pages: Both
+Pages: All
+Proof: No
+Tiling: None
+Scale: 100%, 100%
+Page Position: Upper Left
+Print Layers: Visible & Printable Layers
+Printer's Marks: None
+Bleed: 0 px, 0 px, 0 px, 0 px
+Color: Composite CMYK
+Trapping Mode: None
+Send Image Data: All
+OPI/DCS Image Replacement: No
+Page Size: Letter
+Paper Dimensions: 792 px x 1224 px
+Orientation: Landscape
+Negative: No
+Flip Mode: Off
+
+
+FILE PACKAGE LIST
+
+1. Branching Strategy Poster v1.indd; type: Adobe InDesign publication; size: 1232K
+2. Branching Strategy Poster v1.idml; type: InDesign Markup Document; size: 92K
+3. Branching Strategy Poster v1.pdf; type: Adobe Acrobat Document; size: 67K
+4. DagnyOT-Light copy.otf; type: Font file; size: 50K
+5. DagnyOT-LightIta.otf; type: Font file; size: 51K
