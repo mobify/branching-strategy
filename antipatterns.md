@@ -16,7 +16,7 @@ even think of doing anything you see below.
 feature is developed and tested, create a pull request.
 
 **Why?**: All code changes require a code review and verification by our QA team.
-By opening a pull request, you signalize to the rest of the team that your code
+By opening a pull request, you signal to the rest of the team that your code
 is ready to be reviewed and tested.
 
 * * *

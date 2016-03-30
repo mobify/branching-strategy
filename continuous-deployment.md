@@ -104,7 +104,7 @@ described above.*
 1. Add a test case to validate the bug, fix the bug, and commit
    *When doing a hotfix you should at _least_ pair on the fix with somebody or
    review it in person with one other engineer before releasing it. We're
-   running without training wheel's here and want to do our best not to have to
+   running without training wheels here and want to do our best not to have to
    do a stream of hotfixes in production.*
    ```
    ... add test, fix bug, verify
