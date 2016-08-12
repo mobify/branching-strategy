@@ -84,7 +84,10 @@ There's nothing special about that. Each developer follows the above [Develop a 
    the release.
 
    ```
+   $ git checkout master
+   $ git pull
    $ git checkout develop
+   $ git pull
    $ git merge master
    ```
 
@@ -113,7 +116,7 @@ There's nothing special about that. Each developer follows the above [Develop a 
    * Base: `master`
    * Compare: `release-vX.Y.Z`
    Paste the Release Checklist into the PR body. Each project should define a release
-   checklist. It will vary across projects, but you can refer to the Astro [Release](https://github.com/mobify/astro/blob/develop/RELEASE.md) document
+   checklist. It will vary across projects, but you can refer to the Mobify Code Style [Release](https://github.com/mobify/mobify-code-style/blob/develop/RELEASE.md) document
    for an example.
 
 1. At some point in the checklist you will merge the release branch into `master`.
@@ -127,21 +130,20 @@ There's nothing special about that. Each developer follows the above [Develop a 
    * Description: Include a high-level list of things changed in this release.
    Click `Publish release`.
 
-1. Merge the `release-vX.Y.Z` into `develop`.
+1. Merge `master` into `develop`.
 
     ```
+    $ git checkout master
+    $ git pull
     $ git checkout develop
-    $ git merge release-vX.Y.Z
+    $ git merge master
     $ git push
     ```
 
-1. Finish off the tasks in the release checklist. Once everything is done, close
-   the release PR.
+1. Finish off the tasks in the release checklist.
 
 **TBD: Discuss**
 Mike N: Long-lived release branches, yes/no?
-
-1. Create the release on Github from `master`.
 
 ### Change in plan, pull a feature from a release
 
@@ -166,6 +168,7 @@ code in it already.
 
    ```
    $ git checkout master
+   $ git pull
    $ git checkout -b hotfix-documentation-broken-links
    $ git push --set-upstream hotfix-documentation-broken-links
    ```
@@ -203,16 +206,17 @@ code in it already.
   patch part of the version when releasing a hotfix and so even hotfixes go
   through the process of creating a release like this.*
 
-1. Merge the `hotfix-documentation-broken-links` into `develop`.
+1. Merge `master` into `develop`.
 
    ```
+   $ git checkout master
+   $ git pull
    $ git checkout develop
-   $ git merge hotfix-documentation-broken-links
+   $ git merge master
    $ git push
    ```
 
-1. Finish off the tasks in the release checklist. Once everything is done, close
-   the hotfix PR.
+1. Finish off the tasks in the release checklist.
 
 ## Migrate a legacy project
 
@@ -233,7 +237,7 @@ The process for tagging and merging is a bit different when deploying a bundle, 
 
 1. Create a bundle to be sent to the customer for verification and approval off of the `release-vX.Y.Z` branch.
 
-	Ensure you have installed the automated bundle message script found [here] (https://	mobify.atlassian.net/wiki/questions/81789082/how-do-i-automate-a-bundle-message-using-bash). Follow these steps:
+	Ensure you have installed the automated bundle message script found [here] (https://mobify.atlassian.net/wiki/questions/81789082/how-do-i-automate-a-bundle-message-using-bash). Follow these steps:
 
 	```
 	$ grunt push -m "$(message Mobile X.Y.Z)"
@@ -269,3 +273,12 @@ The process for tagging and merging is a bit different when deploying a bundle, 
    Click `Publish release`.
 
    **NOTE: the release tag will be 1 commit ahead of the bundle commit**
+
+1. Merge `master` into `develop`.
+    ```
+    $ git checkout master
+    $ git pull
+    $ git checkout develop
+    $ git merge master
+    $ git push
+    ```
