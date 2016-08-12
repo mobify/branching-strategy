@@ -124,7 +124,7 @@ There's nothing special about that. Each developer follows the above [Develop a 
 
 1. Now you are ready to create the actual release. Navigate to the project page
    on Github and draft a new release with the following settings:
-   * Tag version: `vX.Y.Z`
+   * Tag version: `X.Y.Z`
    * Target: `master`
    * Release title: `Release vX.Y.Z`
    * Description: Include a high-level list of things changed in this release.
@@ -195,7 +195,7 @@ code in it already.
 1. Now that the hotfix code is in `master` you are ready to create the actual
    release. Navigate to the project page on Github and draft a new release with
    the following settings:
-   * Tag version: `vX.Y.Z`
+   * Tag version: `X.Y.Z`
    * Target: `master`
    * Release title: `Release vX.Y.Z (hotfix)`
    * Description: Include a high-level list of things changed in this release.
