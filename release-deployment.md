@@ -84,10 +84,7 @@ There's nothing special about that. Each developer follows the above [Develop a 
    the release.
 
    ```
-   $ git checkout master
-   $ git pull
    $ git checkout develop
-   $ git pull
    $ git merge master
    ```
 
@@ -133,8 +130,6 @@ There's nothing special about that. Each developer follows the above [Develop a 
 1. Merge `master` into `develop`.
 
     ```
-    $ git checkout master
-    $ git pull
     $ git checkout develop
     $ git merge master
     $ git push
@@ -168,7 +163,6 @@ code in it already.
 
    ```
    $ git checkout master
-   $ git pull
    $ git checkout -b hotfix-documentation-broken-links
    $ git push --set-upstream hotfix-documentation-broken-links
    ```
@@ -209,8 +203,6 @@ code in it already.
 1. Merge `master` into `develop`.
 
    ```
-   $ git checkout master
-   $ git pull
    $ git checkout develop
    $ git merge master
    $ git push
