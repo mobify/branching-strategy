@@ -243,7 +243,7 @@ The process for tagging and merging is a bit different when deploying a bundle, 
 	$ grunt push -m "$(message Mobile X.Y.Z)"
 	```
 
-1. When creating a pull request to merge the release branch into `master` ensure that the standard workflow for _creating a release_ is followed with these specific changes:
+1. When creating a pull request to merge the release branch into `master` ensure that the [standard workflow for _creating a release_](#create-and-deploy-a-release) is followed with these specific changes:
    * Name/Summary: `DEPLOYMENT MERGE: release-v.X.Y.Z, bundle <bundle number that was sent to customer>`
    * Description:
 
@@ -266,19 +266,10 @@ The process for tagging and merging is a bit different when deploying a bundle, 
 
 1. Once the customer has approved the bundle. The bundle is published to production and post launch tests occur. Once all tests have passed, the pull request is merged into `master`.
 
-1. Finish the _Github release workflow_ as described above and ensure that these specific changes are added to the _release notes_ draft of the _Github release_:
+1. Finish the _Github release workflow_ as described [here](#create-and-deploy-a-release) and ensure that these specific changes are added to the _release notes_ draft of the _Github release_:
    * Release title: `Release vX.Y.Z - Bundle <number>`
    * Description: This should also include a link to a confluence JIRA report page that lists all issues in the release.
 
    Click `Publish release`.
 
    **NOTE: the release tag will be 1 commit ahead of the bundle commit**
-
-1. Merge `master` into `develop`.
-    ```
-    $ git checkout master
-    $ git pull
-    $ git checkout develop
-    $ git merge master
-    $ git push
-    ```
