@@ -135,6 +135,8 @@ There's nothing special about that. Each developer follows the above [Develop a 
     $ git push
     ```
 
+1. Merge `master` into any open `release-vX.Y.Z` or `hotfix-` branches.
+
 1. Finish off the tasks in the release checklist.
 
 **TBD: Discuss**
@@ -207,6 +209,8 @@ code in it already.
    $ git merge master
    $ git push
    ```
+
+1. Merge `master` into any open `release-vX.Y.Z` or `hotfix-` branches.
 
 1. Finish off the tasks in the release checklist.
 

@@ -121,3 +121,5 @@ described above.*
 1. When the pull request has been reviewed and ![+1'd](images/plus1.png)
    , merge and close it and then delete the `hotfix-documentation-broken-links`
    branch. This can all be done from the Github pull-request page.
+
+1. Merge `master` into any open `hotfix-` branches.
