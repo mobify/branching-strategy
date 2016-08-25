@@ -113,7 +113,7 @@ There's nothing special about that. Each developer follows the above [Develop a 
    * Base: `master`
    * Compare: `release-vX.Y.Z`
    Paste the Release Checklist into the PR body. Each project should define a release
-   checklist. It will vary across projects, but you can refer to the Mobify Code Style [Release](https://github.com/mobify/mobify-code-style/blob/develop/RELEASE.md) document
+   checklist. It will vary across projects, but you can refer to the Mobify Code Style [Release](https://github.com/mobify/mobify-code-style/blob/master/RELEASE.md) document
    for an example.
 
 1. At some point in the checklist you will merge the release branch into `master`.
