@@ -35,8 +35,6 @@ provides a brief overview of the two release models that we use:
 [release-based](release-deployment.md) and
 [continuous delivery](continuous-deployment.md).
 
-![Branching strategy overview](images/branching-strategy-overview.png)
-
 Each workflow tries to make things as simple as possible while still being
 flexible enough to work for all teams at Mobify.
 
