@@ -16,6 +16,7 @@ and how to deal with them from a branching point of view.
 - [Change in plan, pull a feature from a release](#change-in-plan-pull-a-feature-from-a-release)
 - [Change request](#change-request)
 - [Production hot fix](#production-hot-fix)
+- [Develop in a platform repo](#platform-repo)
 
 ## Branches Overview
 
@@ -121,3 +122,16 @@ described above.*
 1. When the pull request has been reviewed and ![+1'd](images/plus1.png)
    , merge and close it and then delete the `hotfix-documentation-broken-links`
    branch. This can all be done from the Github pull-request page.
+
+## Develop in a platform repo
+
+A platform repo contains both Progressive Mobile App and Progressive Mobile Web
+source code.
+
+The development process is the same as outlined above in
+[Develop a new feature](#develop-a-new-feature).
+
+**However**, branches have to be prefixed based on the following rules:
+* `app-`, for changes mainly touching Progressive Mobile App code.
+* `web-`, for changes mainly touching Progressive Mobile Web code.
+* `platform-`, for changes touching both Progressive Mobile App and Web code.
