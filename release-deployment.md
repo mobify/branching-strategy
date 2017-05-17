@@ -167,7 +167,7 @@ code in it already.
    ```
    $ git checkout master
    $ git checkout -b hotfix-documentation-broken-links
-   $ git push --set-upstream hotfix-documentation-broken-links
+   $ git push --set-upstream origin hotfix-documentation-broken-links
    ```
 
 1. Add a test case to validate the bug, fix the bug, and commit.
