@@ -158,20 +158,27 @@ Here is an example of creating a support branch for v1.0 assuming v2.0 of the pr
 1. Create the support branch and release branch for the patch release.
 
     ```
+    // Checkout the tag for the 1.0.0 release
     git checkout v1.0.0
+
+    // Create the long living support branch
     git checkout -b support-v1.x
+
+    // Create the release branch
     git checkout -b release-v1.0.1
     ```
 
+    Note: For subsequent releases (ex v1.0.2) the release branch will be branched off the `HEAD` of `support-v1.x`
+
 1. Make changes in the `release-v1.0.1`. Multiple PRs can be merged into this branch if several changes are necessary.
+
+1. As PRs are merged into the `release-v1.0.1` branch create associated PRs that cherry pick the changes back into `develop`. Ensure that these changes are desired by the team going forward and that they are compatible with the current state of the `develop` branch.
 
 1. Create release PR to merge `release-v1.0.1` into `support-v1.x`.
 
-1. Follow the standard release process treating `support-v1.x` as the `master` branch.
+1. Follow the standard release process treating `support-v1.x` as the `master` branch. As per the standard release process `release-v1.0.1` will get deleted and `support-v1.x` will remain in repo indefinitely.
 
 1. Mark `support-v1.x` as a protected branch in github so that it does not get accidentally deleted.
-
-1. As PRs are merged into the `release-v1.0.1` branch create associated PRs that cherry pick the changes back into `develop`. Ensure that these changes are desired by the team going forward and that they are compatible with the current state of the `develop` branch.
 
 *Pro-tip*: Try to maintain as few support branches as possible. These branches are expensive to maintain since you will need to cherry pick applicable bug fixes into each support branch seperately.
 
