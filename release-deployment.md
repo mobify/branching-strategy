@@ -138,20 +138,50 @@ There's nothing special about that. Each developer follows the above [Develop a 
 1. Finish off the tasks in the release checklist. Once everything is done, close
    the release PR.
 
-**TBD: Discuss**
-Mike N: Long-lived release branches, yes/no?
-
-1. Create the release on Github from `master`.
+1. Delete the release branch on Github.
 
 ### Change in plan, pull a feature from a release
 
 **TBD: Discuss**
 Mike N: That probably means recreating the release branch, unless we have short-lived release branches
 
-### Change request
+### Supporting old releases
 
-**TBD: Discuss**
-Mike N: That probably means recreating the release branch, unless we have short-lived release branches
+In a release based project old releases can often need some maintenance. Critical bug fixes and strategic feature requests need to be supported on old releases. Old releases often become incompatible with the most recent versions of projects.
+
+In order to support old release versions gitflow has introduced the concept of support branches. Support branches are long living branches created to support major or minor versions of the project. Support branches do not get merged back into `master` or `develop` (this would cause major merge issues which are time consuming and error prone if attempted). Instead commits can be cherry picked from the support branch back into `develop`. 
+
+Support branches can be thought of as the `master` branch for old releases. Support branches for major releases should be named as `support-v<major>.x`. Support branches for minor releases should be named as `support-v<major>.<minor>.x`.
+
+Here is an example of creating a support branch for v1.0 assuming v2.0 of the project has already been released.
+
+1. Create the support branch and release branch for the patch release.
+
+    ```
+    // Checkout the tag for the 1.0.0 release
+    git checkout v1.0.0
+
+    // Create the long living support branch
+    git checkout -b support-v1.x
+
+    // Create the release branch
+    git checkout -b release-v1.0.1
+    ```
+
+    Note: For subsequent releases (ex v1.0.2) the release branch will be branched off the `HEAD` of `support-v1.x`
+
+1. Make changes in the `release-v1.0.1`. Multiple PRs can be merged into this branch if several changes are necessary.
+
+1. As PRs are merged into the `release-v1.0.1` branch create associated PRs that cherry pick the changes back into `develop`. Ensure that these changes are desired by the team going forward and that they are compatible with the current state of the `develop` branch.
+
+1. Create release PR to merge `release-v1.0.1` into `support-v1.x`.
+
+1. Follow the standard release process treating `support-v1.x` as the `master` branch. As per the standard release process `release-v1.0.1` will get deleted and `support-v1.x` will remain in repo indefinitely.
+
+1. Mark `support-v1.x` as a protected branch in github so that it does not get accidentally deleted.
+
+*Pro-tip*: Try to maintain as few support branches as possible. These branches are expensive to maintain since you will need to cherry pick applicable bug fixes into each support branch seperately.
+
 
 ### Production hot fix
 
